@@ -60,7 +60,7 @@ export default function CampsPage() {
   return (
     <>
       <Header />
-      <main className={styles.main}>
+      <main id="main-content" className={styles.main}>
         <div className="container">
           <span className={styles.label}>JKA Moldova</span>
           <h1 className={styles.title}>

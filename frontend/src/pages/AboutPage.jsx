@@ -33,7 +33,7 @@ export default function AboutPage() {
   return (
     <>
       <Header />
-      <main className={styles.main}>
+      <main id="main-content" className={styles.main}>
         {/* Structure */}
         <section id="structure" className={styles.section}>
           <div className="container">
@@ -83,22 +83,35 @@ export default function AboutPage() {
             <h2 className={styles.title}>{p.partners.title}</h2>
             <p className={styles.subtitle}>{p.partners.subtitle}</p>
             <div className={styles.partnersGrid}>
-              {PARTNERS.map((partner) => (
-                <a
-                  key={partner.name}
-                  href={partner.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.partnerCard}
-                >
-                  <div className={styles.partnerKanji}>道</div>
-                  <div className={styles.partnerInfo}>
-                    <span className={styles.partnerName}>{partner.name}</span>
-                    <span className={styles.partnerCountry}>{partner.country[lang] || partner.country.en}</span>
+              {PARTNERS.map((partner) => {
+                const hasUrl = partner.url && partner.url !== '#';
+                const inner = (
+                  <>
+                    <div className={styles.partnerKanji} aria-hidden="true">道</div>
+                    <div className={styles.partnerInfo}>
+                      <span className={styles.partnerName}>{partner.name}</span>
+                      <span className={styles.partnerCountry}>{partner.country[lang] || partner.country.en}</span>
+                    </div>
+                    {hasUrl && <span className={styles.partnerArrow} aria-hidden="true">→</span>}
+                  </>
+                );
+                return hasUrl ? (
+                  <a
+                    key={partner.name}
+                    href={partner.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.partnerCard}
+                    aria-label={`${partner.name} — ${t.a11y.opensInNewTab}`}
+                  >
+                    {inner}
+                  </a>
+                ) : (
+                  <div key={partner.name} className={styles.partnerCard}>
+                    {inner}
                   </div>
-                  <span className={styles.partnerArrow}>→</span>
-                </a>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>

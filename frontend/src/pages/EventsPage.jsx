@@ -21,7 +21,7 @@ export default function EventsPage() {
   return (
     <>
       <Header />
-      <main className={styles.main} style={{ paddingTop: 120 }}>
+      <main id="main-content" className={styles.main} style={{ paddingTop: 120 }}>
         <div className="container">
           <h1 className={styles.title}>{ev.title1} {ev.title2}</h1>
           {loading && <p className={styles.state}>…</p>}

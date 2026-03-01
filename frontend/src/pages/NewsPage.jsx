@@ -12,7 +12,7 @@ export default function NewsPage() {
   return (
     <>
       <Header />
-      <main className={styles.main} style={{ paddingTop: 120 }}>
+      <main id="main-content" className={styles.main} style={{ paddingTop: 120 }}>
         <div className="container">
           <h1 className={styles.title}>{n.title1} {n.title2}</h1>
           {loading && <p className={styles.state}>…</p>}

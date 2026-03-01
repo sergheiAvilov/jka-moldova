@@ -40,7 +40,7 @@ export default function SchedulePage() {
   return (
     <>
       <Header />
-      <main className={styles.main}>
+      <main id="main-content" className={styles.main}>
         <div className="container">
           <span className={styles.label}>JKA Moldova</span>
           <h1 className={styles.title}>
@@ -75,7 +75,7 @@ export default function SchedulePage() {
             <p>{p.note}</p>
           </div>
 
-          <a href="#disciplines" className={styles.cta}>{p.ctaLabel}</a>
+          <a href={'/#disciplines'} className={styles.cta}>{p.ctaLabel}</a>
         </div>
       </main>
       <Footer />
