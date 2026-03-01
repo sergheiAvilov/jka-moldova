@@ -7,12 +7,12 @@ export default function Hero() {
 
   return (
     <section className={styles.hero}>
-      <div className={styles.heroBg} />
-      <div className={styles.heroPattern} />
-      <div className={styles.heroKanji}>空手道</div>
+      <div className={styles.heroBg} aria-hidden="true" />
+      <div className={styles.heroPattern} aria-hidden="true" />
+      <div className={styles.heroKanji} aria-hidden="true">空手道</div>
 
       <div className={styles.content}>
-        <div className={styles.eyebrow}>
+        <div className={styles.eyebrow} aria-hidden="true">
           <span className={styles.line} />
           {h.label}
           <span className={styles.line} />
@@ -22,7 +22,7 @@ export default function Hero() {
           {h.title1} <span className={styles.red}>{h.title2}</span>
         </h1>
 
-        <p className={styles.subtitleJp}>日本空手協会</p>
+        <p className={styles.subtitleJp} lang="ja">日本空手協会</p>
 
         <p className={styles.desc}>{h.subtitle}</p>
 
@@ -32,7 +32,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className={styles.scroll}>
+      <div className={styles.scroll} aria-hidden="true">
         <div className={styles.scrollLine} />
         {h.scroll}
       </div>

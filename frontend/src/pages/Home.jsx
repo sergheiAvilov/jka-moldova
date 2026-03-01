@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main style={{ paddingTop: 72 }}>
+      <main id="main-content" style={{ paddingTop: 72 }}>
         <Hero />
         <RedStripe />
         <About />

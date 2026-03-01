@@ -16,16 +16,19 @@ export default function Instructors() {
   return (
     <section id="instructors" className={styles.section}>
       <div className="container">
-        <div className={styles.label}><span className={styles.line} />{ins.label}</div>
+        <div className={styles.label}>
+          <span className={styles.line} aria-hidden="true" />{ins.label}
+        </div>
         <h2 className={styles.title}>
-          <span className={styles.jp}>先生</span>
+          <span className={styles.jp} aria-hidden="true" lang="ja">先生</span>
           {ins.title1}<br />{ins.title2}
         </h2>
         <div className={styles.grid}>
           {instructors.map((i) => (
-            <Link key={i.id} to={`/instructors/${i.id}`} className={styles.card}>
+            <Link key={i.id} to={`/instructors/${i.id}`} className={styles.card} aria-label={`${i.name} — ${t.roleMap?.[i.role] ?? i.role}`}>
               <div
                 className={styles.photo}
+                aria-hidden="true"
                 style={i.image ? {
                   backgroundImage: `url(${i.image})`,
                   backgroundSize: 'cover',
