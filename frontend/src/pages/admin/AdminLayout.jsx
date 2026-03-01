@@ -2,6 +2,7 @@ import { Navigate, Outlet, NavLink, Link } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth.js';
 import { useT } from '../../hooks/useT.js';
 import { useLang } from '../../context/LangContext.jsx';
+import JKALogo from '../../components/Logo/JKALogo.jsx';
 import styles from './AdminLayout.module.css';
 
 const LANGS = ['ro', 'ru', 'en'];
@@ -29,8 +30,7 @@ export default function AdminLayout() {
       <aside className={styles.sidebar}>
         {/* Brand */}
         <div className={styles.brand}>
-          <div className={styles.brandKanji}>道</div>
-          <div className={styles.brandTitle}>JKA Moldova</div>
+          <JKALogo dark className={styles.logoImg} />
           <span className={styles.brandSub}>{a.panelTitle}</span>
         </div>
 

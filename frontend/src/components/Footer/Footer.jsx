@@ -1,16 +1,7 @@
 import { Link } from 'react-router-dom';
 import styles from './Footer.module.css';
 import { useT } from '../../hooks/useT.js';
-
-function LogoEmblem() {
-  return (
-    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.emblemSvg}>
-      <circle cx="24" cy="24" r="22" stroke="#C0392B" strokeWidth="1.5"/>
-      <path d="M24 14 L28 20 L24 18 L20 20Z" fill="#C0392B"/>
-      <circle cx="24" cy="24" r="4" fill="#C0392B"/>
-    </svg>
-  );
-}
+import JKALogo from '../Logo/JKALogo.jsx';
 
 export default function Footer() {
   const t = useT();
@@ -24,11 +15,7 @@ export default function Footer() {
         <div className={styles.grid}>
           <div className={styles.brand}>
             <Link to="/" className={styles.logo}>
-              <div className={styles.logoEmblem}><LogoEmblem /></div>
-              <div className={styles.logoText}>
-                <span className={styles.jka}>JKA</span>
-                <span className={styles.moldova}>Moldova</span>
-              </div>
+              <JKALogo dark className={styles.logoImg} />
             </Link>
             <p className={styles.brandDesc}>
               Japan Karate Association — Moldova.
