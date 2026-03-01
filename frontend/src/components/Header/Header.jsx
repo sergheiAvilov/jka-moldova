@@ -23,7 +23,7 @@ export default function Header() {
 
   return (
     <header className={styles.header}>
-      <a href="#main-content" className="skip-link">{t.a11y.skipToContent}</a>
+      <a href={'#main-content'} className="skip-link">{t.a11y.skipToContent}</a>
 
       <Link to="/" className={styles.logo} aria-label="JKA Moldova">
         <JKALogo dark={theme === 'dark'} className={styles.logoImg} />

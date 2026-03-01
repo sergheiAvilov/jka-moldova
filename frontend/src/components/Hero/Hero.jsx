@@ -27,8 +27,8 @@ export default function Hero() {
         <p className={styles.desc}>{h.subtitle}</p>
 
         <div className={styles.actions}>
-          <a href="#cta" className={styles.btnPrimary}>{h.cta}</a>
-          <a href="#about" className={styles.btnOutline}>{t.about.cta}</a>
+          <a href={'#cta'} className={styles.btnPrimary}>{h.cta}</a>
+          <a href={'#about'} className={styles.btnOutline}>{t.about.cta}</a>
         </div>
       </div>
 

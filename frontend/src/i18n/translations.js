@@ -150,6 +150,7 @@ export const translations = {
       title1: 'STAGII DE', title2: 'PREGĂTIRE',
       dateLabel: 'Dată', locationLabel: 'Loc', register: 'Înregistrare',
     },
+    // noinspection NonAsciiCharacters – keys are role names from the backend and cannot be changed
     roleMap: {
       'Президент JKA Молдова': 'Președinte JKA Moldova',
       'Главный инструктор': 'Instructor principal',
@@ -330,6 +331,7 @@ export const translations = {
       title1: 'УЧЕБНЫЕ', title2: 'СБОРЫ',
       dateLabel: 'Дата', locationLabel: 'Место', register: 'Записаться',
     },
+    // noinspection NonAsciiCharacters – keys are role names from the backend and cannot be changed
     roleMap: {
       'Президент JKA Молдова': 'Президент JKA Молдова',
       'Главный инструктор': 'Главный инструктор',
@@ -510,6 +512,7 @@ export const translations = {
       title1: 'TRAINING', title2: 'CAMPS',
       dateLabel: 'Date', locationLabel: 'Location', register: 'Register',
     },
+    // noinspection NonAsciiCharacters – keys are role names from the backend and cannot be changed
     roleMap: {
       'Президент JKA Молдова': 'President JKA Moldova',
       'Главный инструктор': 'Chief Instructor',
