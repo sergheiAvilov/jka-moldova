@@ -1,0 +1,229 @@
+.main {
+  padding-top: 100px;
+  min-height: 70vh;
+  background: var(--bg-base);
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.sectionAlt {
+  background: var(--bg-surface);
+}
+
+.label {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  letter-spacing: 3px;
+  color: var(--text-base);
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--text-soft);
+  letter-spacing: 1px;
+  margin-bottom: 48px;
+}
+
+/* Structure */
+.structureGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+}
+
+.memberCard {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  padding: 32px 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: border-color var(--transition);
+}
+
+.memberCard:hover {
+  border-color: rgba(192, 57, 43, 0.3);
+}
+
+.memberKanji {
+  font-family: var(--font-jp);
+  font-size: 2.5rem;
+  color: var(--red);
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+.memberInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.memberRole {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.memberName {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: var(--text-base);
+}
+
+.memberDan {
+  font-size: 11px;
+  color: var(--red);
+  letter-spacing: 1px;
+}
+
+/* Documents */
+.docList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.docItem {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 28px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  transition: border-color var(--transition);
+}
+
+.docItem:hover {
+  border-color: rgba(192, 57, 43, 0.3);
+}
+
+.docIcon {
+  font-size: 1.4rem;
+  color: var(--red);
+  flex-shrink: 0;
+}
+
+.docInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.docName {
+  font-size: 14px;
+  color: var(--text-base);
+  letter-spacing: 0.5px;
+}
+
+.docYear {
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+}
+
+.docBtn {
+  background: transparent;
+  border: 1px solid var(--border-medium);
+  color: var(--text-soft);
+  padding: 8px 20px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color var(--transition), color var(--transition);
+  white-space: nowrap;
+}
+
+.docBtn:hover {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+/* Partners */
+.partnersGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+}
+
+.partnerCard {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 28px 32px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  text-decoration: none;
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.partnerCard:hover {
+  border-color: rgba(192, 57, 43, 0.4);
+  transform: translateX(4px);
+}
+
+.partnerKanji {
+  font-family: var(--font-jp);
+  font-size: 2rem;
+  color: var(--red);
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+.partnerInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.partnerName {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: var(--text-base);
+}
+
+.partnerCountry {
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.partnerArrow {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  transition: color var(--transition), transform var(--transition);
+}
+
+.partnerCard:hover .partnerArrow {
+  color: var(--red);
+  transform: translateX(4px);
+}
+
+@media (max-width: 900px) {
+  .structureGrid { grid-template-columns: repeat(2, 1fr); }
+  .partnersGrid  { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .structureGrid { grid-template-columns: 1fr; }
+  .section { padding: 60px 0; }
+}

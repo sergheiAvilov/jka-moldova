@@ -6,6 +6,10 @@ import ThemeToggle from './components/ui/ThemeToggle/ThemeToggle.jsx';
 import Home from './pages/Home.jsx';
 import NewsPage from './pages/NewsPage.jsx';
 import EventsPage from './pages/EventsPage.jsx';
+import AboutPage from './pages/AboutPage.jsx';
+import SchedulePage from './pages/SchedulePage.jsx';
+import ClubsPage from './pages/ClubsPage.jsx';
+import CampsPage from './pages/CampsPage.jsx';
 import AdminLogin from './pages/admin/AdminLogin.jsx';
 import AdminLayout from './pages/admin/AdminLayout.jsx';
 import AdminNews from './pages/admin/AdminNews.jsx';
@@ -25,6 +29,10 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/news" element={<NewsPage />} />
             <Route path="/events" element={<EventsPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/schedule" element={<SchedulePage />} />
+            <Route path="/clubs" element={<ClubsPage />} />
+            <Route path="/camps" element={<CampsPage />} />
             <Route path="/instructors/:id" element={<InstructorPage />} />
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin" element={<AdminLayout />}>

@@ -1,17 +1,24 @@
 import { Navigate, Outlet, NavLink, Link } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth.js';
+import { useT } from '../../hooks/useT.js';
+import { useLang } from '../../context/LangContext.jsx';
 import styles from './AdminLayout.module.css';
 
-const navItems = [
-  { to: '/admin/news',     icon: '◈', label: 'Новости' },
-  { to: '/admin/events',   icon: '◆', label: 'События' },
-  { to: '/admin/contacts', icon: '◉', label: 'Заявки' },
-  { to: '/admin/gallery',      icon: '◎', label: 'Галерея' },
-  { to: '/admin/instructors',  icon: '◇', label: 'Инструкторы' },
+const LANGS = ['ro', 'ru', 'en'];
+
+const NAV_KEYS = [
+  { to: '/admin/news',        icon: '◈', key: 'news' },
+  { to: '/admin/events',      icon: '◆', key: 'events' },
+  { to: '/admin/contacts',    icon: '◉', key: 'contacts' },
+  { to: '/admin/gallery',     icon: '◎', key: 'gallery' },
+  { to: '/admin/instructors', icon: '◇', key: 'instructors' },
 ];
 
 export default function AdminLayout() {
   const { isAuthenticated, logout } = useAuth();
+  const t = useT();
+  const { lang, changeLang } = useLang();
+  const a = t.admin.layout;
 
   if (!isAuthenticated) {
     return <Navigate to="/admin/login" replace />;
@@ -24,13 +31,13 @@ export default function AdminLayout() {
         <div className={styles.brand}>
           <div className={styles.brandKanji}>道</div>
           <div className={styles.brandTitle}>JKA Moldova</div>
-          <span className={styles.brandSub}>Панель управления</span>
+          <span className={styles.brandSub}>{a.panelTitle}</span>
         </div>
 
         {/* Nav */}
         <nav className={styles.nav}>
-          <div className={styles.navLabel}>Контент</div>
-          {navItems.map(({ to, icon, label }) => (
+          <div className={styles.navLabel}>{a.contentLabel}</div>
+          {NAV_KEYS.map(({ to, icon, key }) => (
             <NavLink
               key={to}
               to={to}
@@ -39,18 +46,29 @@ export default function AdminLayout() {
               }
             >
               <span className={styles.navIcon}>{icon}</span>
-              {label}
+              {a.nav[key]}
             </NavLink>
           ))}
         </nav>
 
         {/* Footer */}
         <div className={styles.sidebarFooter}>
+          <div className={styles.langRow}>
+            {LANGS.map((l) => (
+              <button
+                key={l}
+                className={`${styles.langBtn} ${lang === l ? styles.langActive : ''}`}
+                onClick={() => changeLang(l)}
+              >
+                {l.toUpperCase()}
+              </button>
+            ))}
+          </div>
           <Link to="/" className={styles.backLink}>
-            <span>←</span> На сайт
+            {a.backToSite}
           </Link>
           <button className={styles.logout} onClick={logout}>
-            <span>⎋</span> Выйти
+            <span>⎋</span> {a.logout}
           </button>
         </div>
       </aside>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { apiClient } from '../../api/client.js';
+import { useT } from '../../hooks/useT.js';
 import styles from './AdminTable.module.css';
 
 const emptyForm = { title: '', description: '', date: '', location: '', image: '' };
@@ -8,6 +9,9 @@ export default function AdminEvents() {
   const [events, setEvents] = useState([]);
   const [form, setForm] = useState(emptyForm);
   const [editId, setEditId] = useState(null);
+  const t = useT();
+  const a = t.admin.events;
+  const c = t.admin.common;
 
   const load = () => apiClient.get('/events').then((r) => setEvents(r.data));
   useEffect(() => { load(); }, []);
@@ -36,7 +40,7 @@ export default function AdminEvents() {
   };
 
   const handleDelete = async (id) => {
-    if (!confirm('Удалить событие?')) return;
+    if (!confirm(a.confirmDelete)) return;
     await apiClient.delete(`/events/${id}`);
     load();
   };
@@ -45,29 +49,29 @@ export default function AdminEvents() {
     <div>
       <div className={styles.pageHeader}>
         <div>
-          <h1 className={styles.pageTitle}>События</h1>
-          <p className={styles.pageCount}>{events.length} записей в базе</p>
+          <h1 className={styles.pageTitle}>{a.title}</h1>
+          <p className={styles.pageCount}>{events.length} {c.records}</p>
         </div>
       </div>
 
       <div className={styles.card}>
         <h2 className={styles.formTitle}>
-          {editId ? '— Редактирование события' : '— Новое событие'}
+          {editId ? a.editRecord : a.newRecord}
         </h2>
         <form onSubmit={handleSubmit}>
           <div className={styles.formGrid}>
             <div className={`${styles.field} ${styles.formFull}`}>
-              <label className={styles.label}>Название *</label>
+              <label className={styles.label}>{a.nameLabel}</label>
               <input
                 className={styles.input}
-                placeholder="Название события"
+                placeholder={a.namePlaceholder}
                 value={form.title}
                 onChange={(e) => setForm({ ...form, title: e.target.value })}
                 required
               />
             </div>
             <div className={styles.field}>
-              <label className={styles.label}>Дата *</label>
+              <label className={styles.label}>{a.dateLabel}</label>
               <input
                 className={styles.input}
                 type="date"
@@ -77,19 +81,19 @@ export default function AdminEvents() {
               />
             </div>
             <div className={styles.field}>
-              <label className={styles.label}>Место проведения</label>
+              <label className={styles.label}>{a.locationLabel}</label>
               <input
                 className={styles.input}
-                placeholder="Город, адрес"
+                placeholder={a.locationPlaceholder}
                 value={form.location}
                 onChange={(e) => setForm({ ...form, location: e.target.value })}
               />
             </div>
             <div className={`${styles.field} ${styles.formFull}`}>
-              <label className={styles.label}>Описание *</label>
+              <label className={styles.label}>{a.descLabel}</label>
               <textarea
                 className={styles.textarea}
-                placeholder="Описание события..."
+                placeholder={a.descPlaceholder}
                 rows={4}
                 value={form.description}
                 onChange={(e) => setForm({ ...form, description: e.target.value })}
@@ -99,12 +103,12 @@ export default function AdminEvents() {
           </div>
           <div className={styles.formActions}>
             <button className={styles.btnPrimary} type="submit">
-              {editId ? 'Сохранить изменения' : 'Добавить событие'}
+              {editId ? c.save : a.addBtn}
             </button>
             {editId && (
               <button className={styles.btnSecondary} type="button"
                 onClick={() => { setEditId(null); setForm(emptyForm); }}>
-                Отмена
+                {c.cancel}
               </button>
             )}
           </div>
@@ -115,10 +119,10 @@ export default function AdminEvents() {
         <table className={styles.table}>
           <thead>
             <tr>
-              <th>Название</th>
-              <th>Дата</th>
-              <th>Место</th>
-              <th>Действия</th>
+              <th>{a.colName}</th>
+              <th>{a.colDate}</th>
+              <th>{a.colLocation}</th>
+              <th>{a.colActions}</th>
             </tr>
           </thead>
           <tbody>
@@ -132,17 +136,17 @@ export default function AdminEvents() {
                 <td>
                   <div className={styles.cellActions}>
                     <button className={styles.btnEdit} onClick={() => handleEdit(item)}>
-                      Редактировать
+                      {c.edit}
                     </button>
                     <button className={styles.btnDelete} onClick={() => handleDelete(item.id)}>
-                      Удалить
+                      {c.delete}
                     </button>
                   </div>
                 </td>
               </tr>
             ))}
             {events.length === 0 && (
-              <tr><td colSpan={4} className={styles.empty}>Нет записей</td></tr>
+              <tr><td colSpan={4} className={styles.empty}>{c.empty}</td></tr>
             )}
           </tbody>
         </table>

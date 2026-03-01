@@ -38,7 +38,7 @@ export default function Instructors() {
               </div>
               <div className={styles.info}>
                 <div className={styles.name}>{i.name}</div>
-                <div className={styles.role}>{i.role}</div>
+                <div className={styles.role}>{t.roleMap?.[i.role] ?? i.role}</div>
               </div>
             </Link>
           ))}
