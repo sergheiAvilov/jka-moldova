@@ -1,0 +1,124 @@
+.main {
+  padding: 120px 0 80px;
+  min-height: 70vh;
+  background: var(--bg-base);
+}
+
+.label {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  letter-spacing: 3px;
+  color: var(--text-base);
+  margin-bottom: 48px;
+}
+
+.accent {
+  color: var(--red);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  overflow: hidden;
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.card:hover {
+  border-color: rgba(192, 57, 43, 0.3);
+  transform: translateY(-4px);
+}
+
+.cardHeader {
+  padding: 28px 28px 20px;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.kanji {
+  font-family: var(--font-jp);
+  font-size: 2.5rem;
+  color: var(--red);
+  opacity: 0.6;
+  line-height: 1;
+}
+
+.clubName {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: var(--text-base);
+  margin: 0 0 4px;
+}
+
+.city {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.cardBody {
+  padding: 20px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.rowLabel {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  min-width: 70px;
+  flex-shrink: 0;
+}
+
+.rowValue {
+  font-size: 13px;
+  color: var(--text-soft);
+}
+
+.dan {
+  font-size: 11px;
+  color: var(--red);
+  margin-left: 6px;
+}
+
+.phone {
+  font-size: 13px;
+  color: var(--text-soft);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.phone:hover {
+  color: var(--red);
+}
+
+@media (max-width: 768px) {
+  .main { padding: 100px 0 60px; }
+  .grid { grid-template-columns: 1fr; }
+}

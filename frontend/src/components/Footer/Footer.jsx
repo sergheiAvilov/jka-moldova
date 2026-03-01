@@ -38,17 +38,17 @@ export default function Footer() {
 
           <div className={styles.col}>
             <h4>{f.org.title}</h4>
-            <a href="#about">{f.org.about}</a>
-            <a href="#about">{f.org.structure}</a>
-            <a href="#about">{f.org.documents}</a>
-            <a href="#about">{f.org.partners}</a>
+            <Link to="/#about">{f.org.about}</Link>
+            <Link to="/about#structure">{f.org.structure}</Link>
+            <Link to="/about#documents">{f.org.documents}</Link>
+            <Link to="/about#partners">{f.org.partners}</Link>
           </div>
 
           <div className={styles.col}>
             <h4>{f.training.title}</h4>
-            <a href="#disciplines">{f.training.schedule}</a>
-            <a href="#disciplines">{f.training.clubs}</a>
-            <a href="#disciplines">{f.training.camps}</a>
+            <Link to="/schedule">{f.training.schedule}</Link>
+            <Link to="/clubs">{f.training.clubs}</Link>
+            <Link to="/camps">{f.training.camps}</Link>
             <Link to="/events">{f.training.exams}</Link>
           </div>
 
@@ -57,7 +57,7 @@ export default function Footer() {
             <span className={styles.contactItem}>{f.contacts.address}</span>
             <a href={`mailto:${f.contacts.email}`}>{f.contacts.email}</a>
             <a href="tel:+37322000000">{f.contacts.phone}</a>
-            <a href="#">{f.contacts.social}</a>
+            <a href="https://www.facebook.com/JKAMOLDOVA" target="_blank" rel="noopener noreferrer">{f.contacts.social}</a>
           </div>
         </div>
 

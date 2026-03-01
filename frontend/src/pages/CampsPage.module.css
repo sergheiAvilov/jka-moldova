@@ -1,0 +1,146 @@
+.main {
+  padding: 120px 0 80px;
+  min-height: 70vh;
+  background: var(--bg-base);
+}
+
+.label {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  letter-spacing: 3px;
+  color: var(--text-base);
+  margin-bottom: 48px;
+}
+
+.accent {
+  color: var(--red);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.card {
+  display: flex;
+  align-items: stretch;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  overflow: hidden;
+  transition: border-color var(--transition);
+}
+
+.card:hover {
+  border-color: rgba(192, 57, 43, 0.35);
+}
+
+.cardSide {
+  width: 100px;
+  flex-shrink: 0;
+  background: var(--bg-surface);
+  border-right: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 28px 0;
+}
+
+.kanji {
+  font-family: var(--font-jp);
+  font-size: 2rem;
+  color: var(--red);
+  opacity: 0.6;
+}
+
+.num {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+}
+
+.cardBody {
+  flex: 1;
+  padding: 28px 32px;
+}
+
+.campName {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: var(--text-base);
+  margin: 0 0 16px;
+}
+
+.meta {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.metaItem {
+  font-size: 12px;
+  color: var(--text-soft);
+  letter-spacing: 0.5px;
+}
+
+.metaLabel {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-right: 6px;
+}
+
+.desc {
+  font-size: 13px;
+  color: var(--text-soft);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.cardAction {
+  padding: 28px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.registerBtn {
+  background: transparent;
+  border: 1px solid var(--red);
+  color: var(--red);
+  padding: 12px 28px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: var(--font-heading);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background var(--transition), color var(--transition);
+}
+
+.registerBtn:hover {
+  background: var(--red);
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .main { padding: 100px 0 60px; }
+  .card { flex-direction: column; }
+  .cardSide { width: 100%; flex-direction: row; height: 60px; border-right: none; border-bottom: 1px solid var(--border-subtle); }
+  .cardAction { padding: 0 28px 28px; justify-content: flex-start; }
+}

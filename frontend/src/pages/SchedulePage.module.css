@@ -1,0 +1,139 @@
+.main {
+  padding: 120px 0 80px;
+  min-height: 70vh;
+  background: var(--bg-base);
+}
+
+.label {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  letter-spacing: 3px;
+  color: var(--text-base);
+  margin-bottom: 48px;
+}
+
+.accent {
+  color: var(--red);
+}
+
+.tableWrap {
+  overflow-x: auto;
+  border: 1px solid var(--border-medium);
+  margin-bottom: 32px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table thead tr {
+  border-bottom: 1px solid var(--border-medium);
+}
+
+.table th {
+  padding: 16px 24px;
+  text-align: left;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 500;
+  background: var(--bg-surface);
+}
+
+.table tbody tr {
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background var(--transition);
+}
+
+.table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background: var(--card-bg);
+}
+
+.table td {
+  padding: 20px 24px;
+  font-size: 14px;
+  color: var(--text-soft);
+}
+
+.groupName {
+  color: var(--text-base) !important;
+  font-family: var(--font-heading);
+  letter-spacing: 0.5px;
+}
+
+.days {
+  color: var(--red) !important;
+  letter-spacing: 0.5px;
+}
+
+.time {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.location {
+  font-size: 13px !important;
+  color: var(--text-muted) !important;
+}
+
+.note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 20px 24px;
+  border: 1px solid var(--border-subtle);
+  border-left: 3px solid var(--red);
+  background: var(--card-bg);
+  margin-bottom: 40px;
+}
+
+.noteIcon {
+  color: var(--red);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.note p {
+  font-size: 13px;
+  color: var(--text-soft);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.cta {
+  display: inline-block;
+  padding: 14px 40px;
+  background: var(--red);
+  color: #fff;
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-family: var(--font-heading);
+  transition: background var(--transition);
+}
+
+.cta:hover {
+  background: var(--dark-red);
+}
+
+@media (max-width: 768px) {
+  .main { padding: 100px 0 60px; }
+  .table th, .table td { padding: 14px 16px; }
+}

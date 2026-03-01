@@ -122,6 +122,25 @@ export const translations = {
       copyright: '© 2025 Federația JKA Moldova. Toate drepturile rezervate.',
       tagline: 'Karate tradițional Shotokan',
     },
+    aboutPage: {
+      structure: { title: 'STRUCTURA', subtitle: 'Conducerea federației' },
+      documents: { title: 'DOCUMENTE', subtitle: 'Documente oficiale ale federației', download: 'Descarcă' },
+      partners:  { title: 'PARTENERI', subtitle: 'Organizații partenere', visit: 'Vizitează' },
+    },
+    schedulePage: {
+      title1: 'ORARUL', title2: 'ANTRENAMENTELOR',
+      group: 'Grupă', days: 'Zile', time: 'Ora', location: 'Locație',
+      note: 'Prima lecție este gratuită. Vino în echipament sport sau contactează-ne în avans.',
+      ctaLabel: 'Înregistrează-te',
+    },
+    clubsPage: {
+      title1: 'CLUBURILE', title2: 'NOASTRE',
+      coachLabel: 'Antrenor', addressLabel: 'Adresă', phoneLabel: 'Telefon',
+    },
+    campsPage: {
+      title1: 'STAGII DE', title2: 'PREGĂTIRE',
+      dateLabel: 'Dată', locationLabel: 'Loc', register: 'Înregistrare',
+    },
   },
 
   ru: {
@@ -247,6 +266,25 @@ export const translations = {
       copyright: '© 2025 Федерация JKA Moldova. Все права защищены.',
       tagline: 'Традиционное каратэ Шotokan',
     },
+    aboutPage: {
+      structure: { title: 'СТРУКТУРА', subtitle: 'Руководство федерации' },
+      documents: { title: 'ДОКУМЕНТЫ', subtitle: 'Официальные документы федерации', download: 'Скачать' },
+      partners:  { title: 'ПАРТНЁРЫ', subtitle: 'Организации-партнёры', visit: 'Перейти' },
+    },
+    schedulePage: {
+      title1: 'РАСПИСАНИЕ', title2: 'ТРЕНИРОВОК',
+      group: 'Группа', days: 'Дни', time: 'Время', location: 'Место',
+      note: 'Первое занятие — бесплатно. Приходите в спортивной форме или свяжитесь с нами заранее.',
+      ctaLabel: 'Записаться',
+    },
+    clubsPage: {
+      title1: 'НАШИ', title2: 'КЛУБЫ',
+      coachLabel: 'Тренер', addressLabel: 'Адрес', phoneLabel: 'Телефон',
+    },
+    campsPage: {
+      title1: 'УЧЕБНЫЕ', title2: 'СБОРЫ',
+      dateLabel: 'Дата', locationLabel: 'Место', register: 'Записаться',
+    },
   },
 
   en: {
@@ -371,6 +409,25 @@ export const translations = {
       },
       copyright: '© 2025 JKA Moldova Federation. All rights reserved.',
       tagline: 'Traditional Shotokan Karate',
+    },
+    aboutPage: {
+      structure: { title: 'STRUCTURE', subtitle: 'Federation leadership' },
+      documents: { title: 'DOCUMENTS', subtitle: 'Official federation documents', download: 'Download' },
+      partners:  { title: 'PARTNERS', subtitle: 'Partner organizations', visit: 'Visit' },
+    },
+    schedulePage: {
+      title1: 'TRAINING', title2: 'SCHEDULE',
+      group: 'Group', days: 'Days', time: 'Time', location: 'Location',
+      note: 'First session is free. Come in sportswear or contact us in advance.',
+      ctaLabel: 'Register',
+    },
+    clubsPage: {
+      title1: 'OUR', title2: 'CLUBS',
+      coachLabel: 'Coach', addressLabel: 'Address', phoneLabel: 'Phone',
+    },
+    campsPage: {
+      title1: 'TRAINING', title2: 'CAMPS',
+      dateLabel: 'Date', locationLabel: 'Location', register: 'Register',
     },
   },
 };
