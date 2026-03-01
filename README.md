@@ -1,46 +1,46 @@
-# JKA Moldova — Официальный сайт
+# JKA Moldova — Official Website
 
-Официальный сайт Национальной федерации карате JKA Молдовы.
+Official website of the JKA Moldova National Karate Federation.
 
-## Технологии
+## Tech Stack
 
 **Backend**
 - Node.js + Express
 - SQLite (better-sqlite3)
-- JWT-аутентификация
-- Multer (загрузка изображений)
+- JWT authentication
+- Multer (image uploads)
 
 **Frontend**
 - React 18 + Vite
 - React Router
-- Поддержка двух языков (RO / RU)
+- Bilingual support (RO / RU)
 
-## Структура проекта
+## Project Structure
 
 ```
 JKAM/
 ├── backend/
 │   ├── src/
-│   │   ├── db/          # База данных и схема
-│   │   ├── middleware/  # JWT-авторизация
-│   │   └── routes/      # API маршруты
-│   ├── data/            # SQLite файл (не в git)
-│   ├── uploads/         # Загруженные изображения (не в git)
+│   │   ├── db/          # Database and schema
+│   │   ├── middleware/  # JWT authorization
+│   │   └── routes/      # API routes
+│   ├── data/            # SQLite file (not in git)
+│   ├── uploads/         # Uploaded images (not in git)
 │   └── package.json
 └── frontend/
     ├── src/
-    │   ├── components/  # UI компоненты
-    │   ├── pages/       # Страницы + админ-панель
-    │   ├── api/         # HTTP-клиент
+    │   ├── components/  # UI components
+    │   ├── pages/       # Pages + admin panel
+    │   ├── api/         # HTTP client
     │   ├── context/     # React Context
-    │   ├── hooks/       # Хуки
-    │   └── i18n/        # Переводы
+    │   ├── hooks/       # Custom hooks
+    │   └── i18n/        # Translations
     └── package.json
 ```
 
-## Установка и запуск
+## Setup & Running
 
-### 1. Клонировать репозиторий
+### 1. Clone the repository
 
 ```bash
 git clone <repo-url>
@@ -54,20 +54,28 @@ cd backend
 npm install
 ```
 
-Создать файл `.env`:
+Create a `.env` file:
 
 ```env
-PORT=5002
+PORT=5000
 JWT_SECRET=your_secret_key
+ADMIN_USERNAME=admin
+ADMIN_PASSWORD=admin123
 ```
 
-Запустить сервер:
+Seed the database (creates admin user and sample data):
 
 ```bash
-# Разработка
+npm run seed
+```
+
+Start the server:
+
+```bash
+# Development
 npm run dev
 
-# Продакшн
+# Production
 npm start
 ```
 
@@ -81,35 +89,35 @@ npm run dev
 
 ## API
 
-Все маршруты доступны по базовому URL `http://localhost:5002`
+All routes are available at base URL `http://localhost:5000`
 
-| Метод | Путь | Описание |
-|-------|------|----------|
-| POST | `/api/auth/login` | Вход в админ-панель |
-| GET | `/api/news` | Список новостей |
-| GET | `/api/events` | Список событий |
-| GET | `/api/gallery` | Галерея |
-| GET | `/api/instructors` | Инструкторы |
-| POST | `/api/contacts` | Форма обратной связи |
-| POST | `/api/upload` | Загрузка изображения |
-| GET | `/api/health` | Статус сервера |
+| Method | Path | Description |
+|--------|------|-------------|
+| POST | `/api/auth/login` | Admin login |
+| GET | `/api/news` | List news |
+| GET | `/api/events` | List events |
+| GET | `/api/gallery` | Gallery |
+| GET | `/api/instructors` | Instructors |
+| POST | `/api/contacts` | Contact form |
+| POST | `/api/upload` | Upload image |
+| GET | `/api/health` | Server status |
 
-## Админ-панель
+## Admin Panel
 
-Доступна по адресу `/admin`. Позволяет управлять:
-- Новостями
-- Событиями
-- Галереей
-- Инструкторами
-- Заявками (contacts)
+Available at `/admin`. Allows managing:
+- News
+- Events
+- Gallery
+- Instructors
+- Contact requests
 
-## База данных
+## Database
 
-SQLite база создаётся автоматически при первом запуске по пути `backend/data/jka.db`.
+The SQLite database is created automatically on first run at `backend/data/jka.db`.
 
-Таблицы: `news`, `events`, `contacts`, `admins`, `gallery`, `instructors`
+Tables: `news`, `events`, `contacts`, `admins`, `gallery`, `instructors`
 
-Сбросить и пересоздать данные:
+To reset and re-seed data:
 
 ```bash
 cd backend
