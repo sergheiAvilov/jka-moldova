@@ -41,9 +41,9 @@ export default function Footer() {
 
           <div className={styles.col}>
             <h4>{f.contacts.title}</h4>
-            <span className={styles.contactItem}>{f.contacts.address}</span>
-            <a href={`mailto:${f.contacts.email}`}>{f.contacts.email}</a>
-            <a href="tel:+37322000000">{f.contacts.phone}</a>
+            <a href="https://maps.google.com/?q=Chisinau,Moldova" target="_blank" rel="noopener noreferrer" className={styles.contactItem}>{f.contacts.address}</a>
+            <a href={`https://mail.google.com/mail/?view=cm&to=${f.contacts.email}`} target="_blank" rel="noopener noreferrer">{f.contacts.email}</a>
+            <a href={`tel:${f.contacts.phone.replace(/\s/g, '')}`}>{f.contacts.phone}</a>
             <a href="https://www.facebook.com/JKAMOLDOVA" target="_blank" rel="noopener noreferrer">{f.contacts.social}</a>
           </div>
         </div>

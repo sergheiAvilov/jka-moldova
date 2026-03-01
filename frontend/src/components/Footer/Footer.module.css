@@ -12,7 +12,7 @@
   position: absolute;
   right: -40px;
   bottom: -60px;
-  font-family: var(--font-jp);
+  font-family: var(--font-jp), serif;
   font-size: 320px;
   color: rgba(255, 255, 255, 0.025);
   pointer-events: none;
@@ -63,7 +63,7 @@
 }
 
 .brandTagline {
-  font-family: var(--font-heading);
+  font-family: var(--font-heading), serif;
   font-size: 10px;
   letter-spacing: 4px;
   text-transform: uppercase;
@@ -79,7 +79,7 @@
 }
 
 .col h4 {
-  font-family: var(--font-heading);
+  font-family: var(--font-heading), serif;
   font-size: 11px;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -95,10 +95,14 @@
   letter-spacing: 0.5px;
   transition: color var(--transition);
   line-height: 1.5;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .col a:hover {
   color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .contactItem {
@@ -106,6 +110,13 @@
   font-size: 13px;
   letter-spacing: 0.3px;
   line-height: 1.6;
+  cursor: pointer;
+}
+
+.contactItem:hover {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 /* Bottom bar */
@@ -137,7 +148,7 @@
 
 .badgeJka {
   color: var(--red);
-  font-family: var(--font-heading);
+  font-family: var(--font-heading), serif;
   font-weight: 700;
 }
 
