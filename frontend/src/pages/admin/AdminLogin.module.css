@@ -165,3 +165,30 @@
   opacity: 0.45;
   cursor: not-allowed;
 }
+
+.langRow {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 32px;
+}
+
+.langBtn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.3);
+  font-size: 10px;
+  letter-spacing: 2px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.langBtn:hover {
+  border-color: rgba(192,57,43,0.5);
+  color: rgba(255,255,255,0.6);
+}
+
+.langActive {
+  border-color: #C0392B !important;
+  color: #C0392B !important;
+}

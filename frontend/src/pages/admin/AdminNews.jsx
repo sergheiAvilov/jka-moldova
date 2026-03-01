@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { apiClient } from '../../api/client.js';
+import { useT } from '../../hooks/useT.js';
 import styles from './AdminTable.module.css';
 
 const emptyForm = { title: '', content: '', image: '' };
@@ -8,6 +9,9 @@ export default function AdminNews() {
   const [news, setNews] = useState([]);
   const [form, setForm] = useState(emptyForm);
   const [editId, setEditId] = useState(null);
+  const t = useT();
+  const a = t.admin.news;
+  const c = t.admin.common;
 
   const load = () => apiClient.get('/news').then((r) => setNews(r.data));
   useEffect(() => { load(); }, []);
@@ -30,7 +34,7 @@ export default function AdminNews() {
   };
 
   const handleDelete = async (id) => {
-    if (!confirm('Удалить запись?')) return;
+    if (!confirm(a.confirmDelete)) return;
     await apiClient.delete(`/news/${id}`);
     load();
   };
@@ -39,32 +43,32 @@ export default function AdminNews() {
     <div>
       <div className={styles.pageHeader}>
         <div>
-          <h1 className={styles.pageTitle}>Новости</h1>
-          <p className={styles.pageCount}>{news.length} записей в базе</p>
+          <h1 className={styles.pageTitle}>{a.title}</h1>
+          <p className={styles.pageCount}>{news.length} {c.records}</p>
         </div>
       </div>
 
       <div className={styles.card}>
         <h2 className={styles.formTitle}>
-          {editId ? '— Редактирование записи' : '— Новая запись'}
+          {editId ? a.editRecord : a.newRecord}
         </h2>
         <form onSubmit={handleSubmit}>
           <div className={styles.formGrid}>
             <div className={`${styles.field} ${styles.formFull}`}>
-              <label className={styles.label}>Заголовок *</label>
+              <label className={styles.label}>{a.titleLabel}</label>
               <input
                 className={styles.input}
-                placeholder="Введите заголовок"
+                placeholder={a.titlePlaceholder}
                 value={form.title}
                 onChange={(e) => setForm({ ...form, title: e.target.value })}
                 required
               />
             </div>
             <div className={`${styles.field} ${styles.formFull}`}>
-              <label className={styles.label}>Содержание *</label>
+              <label className={styles.label}>{a.contentLabel}</label>
               <textarea
                 className={styles.textarea}
-                placeholder="Текст новости..."
+                placeholder={a.contentPlaceholder}
                 rows={5}
                 value={form.content}
                 onChange={(e) => setForm({ ...form, content: e.target.value })}
@@ -72,7 +76,7 @@ export default function AdminNews() {
               />
             </div>
             <div className={`${styles.field} ${styles.formFull}`}>
-              <label className={styles.label}>URL изображения</label>
+              <label className={styles.label}>{c.imageUrl}</label>
               <input
                 className={styles.input}
                 placeholder="https://..."
@@ -83,12 +87,12 @@ export default function AdminNews() {
           </div>
           <div className={styles.formActions}>
             <button className={styles.btnPrimary} type="submit">
-              {editId ? 'Сохранить изменения' : 'Добавить новость'}
+              {editId ? c.save : a.addBtn}
             </button>
             {editId && (
               <button className={styles.btnSecondary} type="button"
                 onClick={() => { setEditId(null); setForm(emptyForm); }}>
-                Отмена
+                {c.cancel}
               </button>
             )}
           </div>
@@ -99,9 +103,9 @@ export default function AdminNews() {
         <table className={styles.table}>
           <thead>
             <tr>
-              <th>Заголовок</th>
-              <th>Дата публикации</th>
-              <th>Действия</th>
+              <th>{a.colTitle}</th>
+              <th>{a.colDate}</th>
+              <th>{a.colActions}</th>
             </tr>
           </thead>
           <tbody>
@@ -114,17 +118,17 @@ export default function AdminNews() {
                 <td>
                   <div className={styles.cellActions}>
                     <button className={styles.btnEdit} onClick={() => handleEdit(item)}>
-                      Редактировать
+                      {c.edit}
                     </button>
                     <button className={styles.btnDelete} onClick={() => handleDelete(item.id)}>
-                      Удалить
+                      {c.delete}
                     </button>
                   </div>
                 </td>
               </tr>
             ))}
             {news.length === 0 && (
-              <tr><td colSpan={3} className={styles.empty}>Нет записей</td></tr>
+              <tr><td colSpan={3} className={styles.empty}>{c.empty}</td></tr>
             )}
           </tbody>
         </table>

@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { apiClient } from '../api/client.js';
+import { useT } from '../hooks/useT.js';
 import styles from './InstructorPage.module.css';
 
 export default function InstructorPage() {
   const { id } = useParams();
   const [instructor, setInstructor] = useState(null);
   const [loading, setLoading] = useState(true);
+  const t = useT();
+  const p = t.instructorPage;
 
   useEffect(() => {
     apiClient.get(`/instructors/${id}`)
@@ -18,8 +21,8 @@ export default function InstructorPage() {
   if (loading) return <div className={styles.loading}>...</div>;
   if (!instructor) return (
     <div className={styles.notFound}>
-      <p>Инструктор не найден</p>
-      <Link to="/#instructors">← Назад</Link>
+      <p>{p.notFound}</p>
+      <Link to="/#instructors">{p.back}</Link>
     </div>
   );
 
@@ -49,7 +52,7 @@ export default function InstructorPage() {
         <div className={styles.heroLeft}>
           <span className={styles.kanjiWatermark} aria-hidden="true">松濤館</span>
           <Link to="/#instructors" className={styles.back}>
-            <span>←</span> Все инструкторы
+            <span>←</span> {p.backLink.replace('← ', '')}
           </Link>
           <div className={styles.heroMeta}>
             <div className={styles.danBadge}>{instructor.dan}</div>
@@ -69,7 +72,7 @@ export default function InstructorPage() {
               <div className={styles.section}>
                 <div className={styles.sectionLabel}>
                   <span className={styles.sectionLine} />
-                  Биография
+                  {p.bio}
                 </div>
                 <div className={styles.bio}>
                   {instructor.bio.split('\n').map((line, i) => (
@@ -83,7 +86,7 @@ export default function InstructorPage() {
               <div className={styles.section}>
                 <div className={styles.sectionLabel}>
                   <span className={styles.sectionLine} />
-                  Достижения
+                  {p.achievements}
                 </div>
                 <ul className={styles.achievements}>
                   {achievements.map((a, i) => (
@@ -98,7 +101,7 @@ export default function InstructorPage() {
 
             {!instructor.bio && achievements.length === 0 && (
               <div className={styles.empty}>
-                Информация об инструкторе скоро появится
+                {p.empty}
               </div>
             )}
 

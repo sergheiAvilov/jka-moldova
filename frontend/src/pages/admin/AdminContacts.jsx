@@ -1,27 +1,31 @@
 import { useState, useEffect } from 'react';
 import { apiClient } from '../../api/client.js';
+import { useT } from '../../hooks/useT.js';
 import styles from './AdminTable.module.css';
 
 export default function AdminContacts() {
   const [contacts, setContacts] = useState([]);
+  const t = useT();
+  const a = t.admin.contacts;
+  const c = t.admin.common;
 
   const load = () => apiClient.get('/contacts').then((r) => setContacts(r.data));
   useEffect(() => { load(); }, []);
 
   const handleDelete = async (id) => {
-    if (!confirm('Удалить заявку?')) return;
+    if (!confirm(a.confirmDelete)) return;
     await apiClient.delete(`/contacts/${id}`);
     load();
   };
 
-  const withPhone = contacts.filter((c) => c.phone).length;
+  const withPhone = contacts.filter((item) => item.phone).length;
 
   return (
     <div>
       <div className={styles.pageHeader}>
         <div>
-          <h1 className={styles.pageTitle}>Заявки</h1>
-          <p className={styles.pageCount}>{contacts.length} обращений</p>
+          <h1 className={styles.pageTitle}>{a.title}</h1>
+          <p className={styles.pageCount}>{contacts.length} {a.total}</p>
         </div>
       </div>
 
@@ -29,15 +33,15 @@ export default function AdminContacts() {
       <div className={styles.statsBar}>
         <div className={styles.statItem}>
           <div className={styles.statNum}>{contacts.length}</div>
-          <div className={styles.statLabel}>Всего заявок</div>
+          <div className={styles.statLabel}>{a.statTotal}</div>
         </div>
         <div className={styles.statItem}>
           <div className={styles.statNum}>{withPhone}</div>
-          <div className={styles.statLabel}>С телефоном</div>
+          <div className={styles.statLabel}>{a.statWithPhone}</div>
         </div>
         <div className={styles.statItem}>
           <div className={styles.statNum}>{contacts.length - withPhone}</div>
-          <div className={styles.statLabel}>Только email</div>
+          <div className={styles.statLabel}>{a.statEmailOnly}</div>
         </div>
       </div>
 
@@ -45,12 +49,12 @@ export default function AdminContacts() {
         <table className={styles.table}>
           <thead>
             <tr>
-              <th>Имя</th>
-              <th>Email</th>
-              <th>Телефон</th>
-              <th>Сообщение</th>
-              <th>Дата</th>
-              <th>Действия</th>
+              <th>{a.colName}</th>
+              <th>{a.colEmail}</th>
+              <th>{a.colPhone}</th>
+              <th>{a.colMessage}</th>
+              <th>{a.colDate}</th>
+              <th>{a.colActions}</th>
             </tr>
           </thead>
           <tbody>
@@ -66,14 +70,14 @@ export default function AdminContacts() {
                 <td>
                   <div className={styles.cellActions}>
                     <button className={styles.btnDelete} onClick={() => handleDelete(item.id)}>
-                      Удалить
+                      {c.delete}
                     </button>
                   </div>
                 </td>
               </tr>
             ))}
             {contacts.length === 0 && (
-              <tr><td colSpan={6} className={styles.empty}>Заявок пока нет</td></tr>
+              <tr><td colSpan={6} className={styles.empty}>{a.empty}</td></tr>
             )}
           </tbody>
         </table>

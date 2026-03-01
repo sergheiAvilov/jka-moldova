@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { apiClient } from '../../api/client.js';
+import { useT } from '../../hooks/useT.js';
 import ImageUpload from '../../components/ui/ImageUpload/ImageUpload.jsx';
 import styles from './AdminTable.module.css';
 import galleryStyles from './AdminGallery.module.css';
@@ -10,6 +11,9 @@ export default function AdminGallery() {
   const [photos, setPhotos] = useState([]);
   const [form, setForm] = useState(emptyForm);
   const [loading, setLoading] = useState(false);
+  const t = useT();
+  const a = t.admin.gallery;
+  const c = t.admin.common;
 
   const load = () => apiClient.get('/gallery').then((r) => setPhotos(r.data));
   useEffect(() => { load(); }, []);
@@ -28,7 +32,7 @@ export default function AdminGallery() {
   };
 
   const handleDelete = async (id) => {
-    if (!confirm('Удалить фото?')) return;
+    if (!confirm(a.confirmDelete)) return;
     await apiClient.delete(`/gallery/${id}`);
     load();
   };
@@ -37,28 +41,28 @@ export default function AdminGallery() {
     <div>
       <div className={styles.pageHeader}>
         <div>
-          <h1 className={styles.pageTitle}>Галерея</h1>
-          <p className={styles.pageCount}>{photos.length} фото в базе</p>
+          <h1 className={styles.pageTitle}>{a.title}</h1>
+          <p className={styles.pageCount}>{photos.length} {a.photoCount}</p>
         </div>
       </div>
 
       {/* Add photo form */}
       <div className={styles.card}>
-        <h2 className={styles.formTitle}>— Добавить фото</h2>
+        <h2 className={styles.formTitle}>{a.addTitle}</h2>
         <form onSubmit={handleSubmit}>
           <div className={styles.formGrid}>
             <div className={`${styles.field} ${styles.formFull}`}>
               <ImageUpload
-                label="Фотография"
+                label={a.photoLabel}
                 value={form.url}
                 onChange={(url) => setForm((f) => ({ ...f, url }))}
               />
             </div>
             <div className={`${styles.field} ${styles.formFull}`}>
-              <label className={styles.label}>Подпись (необязательно)</label>
+              <label className={styles.label}>{a.captionLabel}</label>
               <input
                 className={styles.input}
-                placeholder="Например: Соревнования 2024"
+                placeholder={a.captionPlaceholder}
                 value={form.caption}
                 onChange={(e) => setForm({ ...form, caption: e.target.value })}
               />
@@ -66,7 +70,7 @@ export default function AdminGallery() {
           </div>
           <div className={styles.formActions}>
             <button className={styles.btnPrimary} type="submit" disabled={loading}>
-              {loading ? 'Добавление...' : 'Добавить фото'}
+              {loading ? a.addingBtn : a.addBtn}
             </button>
             {form.url && (
               <button
@@ -74,7 +78,7 @@ export default function AdminGallery() {
                 type="button"
                 onClick={() => setForm(emptyForm)}
               >
-                Очистить
+                {a.clearBtn}
               </button>
             )}
           </div>
@@ -102,7 +106,7 @@ export default function AdminGallery() {
                 <button
                   className={galleryStyles.deleteBtn}
                   onClick={() => handleDelete(photo.id)}
-                  title="Удалить"
+                  title={c.delete}
                 >
                   ✕
                 </button>
@@ -113,7 +117,7 @@ export default function AdminGallery() {
       ) : (
         <div className={styles.tableWrap}>
           <p className={styles.empty} style={{ padding: '48px', textAlign: 'center' }}>
-            Фотографий пока нет. Добавьте первое фото выше.
+            {a.empty}
           </p>
         </div>
       )}

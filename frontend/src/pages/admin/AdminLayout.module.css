@@ -116,6 +116,37 @@
   gap: 4px;
 }
 
+/* ── Language Switcher ── */
+.langRow {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 10px;
+  padding: 0 4px;
+}
+
+.langBtn {
+  flex: 1;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 9px;
+  letter-spacing: 2px;
+  padding: 5px 0;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  font-family: inherit;
+}
+
+.langBtn:hover {
+  border-color: rgba(192, 57, 43, 0.4);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.langActive {
+  border-color: #C0392B !important;
+  color: #C0392B !important;
+}
+
 .backLink {
   display: flex;
   align-items: center;

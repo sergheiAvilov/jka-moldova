@@ -42,7 +42,7 @@ export default function About() {
           <div className={styles.card}>
             <img
               src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghXLPwf-KUoR_6UQkNUlnOY7IsNRyRWXwRcEqpcv5YJEygR17-WhbZDP3JZrssNg3ynGStkxjnKDUHiG3MOwG3Y7zz5BfzHbTFe_GjTgDEgy6QjjWt7Nd_VSJfT7PhmbjCfQJut8anKls/s1600/1604489_1530060010581324_1539063908275117806_n.jpg"
-              alt="JKA Moldova — тренировка"
+              alt={t.instructorPage.imageAlt}
               className={styles.cardPhoto}
             />
             <div className={styles.cardOverlay} />
