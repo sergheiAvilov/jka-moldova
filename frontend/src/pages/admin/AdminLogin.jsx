@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth.js';
 import { useT } from '../../hooks/useT.js';
 import { useLang } from '../../context/LangContext.jsx';
+import JKALogo from '../../components/Logo/JKALogo.jsx';
 import styles from './AdminLogin.module.css';
 
 const LANGS = ['ro', 'ru', 'en'];
@@ -48,11 +49,8 @@ export default function AdminLogin() {
         </div>
 
         <div className={styles.logo}>
-          <span className={styles.logoKanji}>道</span>
-          <div className={styles.logoText}>
-            <span className={styles.logoTitle}>JKA Moldova</span>
-            <span className={styles.logoSub}>{a.panelTitle}</span>
-          </div>
+          <JKALogo dark className={styles.logoImg} />
+          <span className={styles.logoSub}>{a.panelTitle}</span>
         </div>
 
         <h1 className={styles.title}>{a.title}</h1>
