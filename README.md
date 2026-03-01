@@ -12,8 +12,10 @@ Official website of the JKA Moldova National Karate Federation.
 
 **Frontend**
 - React 18 + Vite
-- React Router
-- Bilingual support (RO / RU)
+- React Router v6
+- Trilingual support (RO / RU / EN)
+- Dark / Light theme switching
+- CSS Modules
 
 ## Project Structure
 
@@ -21,20 +23,36 @@ Official website of the JKA Moldova National Karate Federation.
 JKAM/
 ├── backend/
 │   ├── src/
-│   │   ├── db/          # Database and schema
+│   │   ├── db/          # Database schema and seed
 │   │   ├── middleware/  # JWT authorization
 │   │   └── routes/      # API routes
 │   ├── data/            # SQLite file (not in git)
 │   ├── uploads/         # Uploaded images (not in git)
 │   └── package.json
 └── frontend/
+    ├── public/
+    │   └── flag-md.png  # Moldova flag image (add manually)
     ├── src/
-    │   ├── components/  # UI components
-    │   ├── pages/       # Pages + admin panel
-    │   ├── api/         # HTTP client
-    │   ├── context/     # React Context
-    │   ├── hooks/       # Custom hooks
-    │   └── i18n/        # Translations
+    │   ├── components/
+    │   │   ├── Header/      # Header with theme-aware logo
+    │   │   ├── Footer/      # Footer
+    │   │   └── Logo/
+    │   │       └── JKALogo.jsx  # SVG logo component (no external file)
+    │   ├── pages/
+    │   │   ├── admin/       # Admin panel (News, Events, Gallery, Instructors, Contacts)
+    │   │   ├── AboutPage
+    │   │   ├── SchedulePage
+    │   │   ├── ClubsPage
+    │   │   └── CampsPage
+    │   ├── api/             # HTTP client
+    │   ├── context/
+    │   │   ├── LangContext  # Language (ro/ru/en)
+    │   │   └── ThemeContext # Dark/light theme
+    │   ├── hooks/
+    │   │   ├── useT         # Translation hook
+    │   │   └── useLang      # Language hook
+    │   └── i18n/
+    │       └── translations.js  # All UI strings (RO/RU/EN, incl. admin panel)
     └── package.json
 ```
 
@@ -87,6 +105,16 @@ npm install
 npm run dev
 ```
 
+> Frontend runs on **http://localhost:3000**, backend on **http://localhost:5000**
+
+### 4. Moldova flag image
+
+The logo component references `/flag-md.png`. Place the flag image at:
+
+```
+frontend/public/flag-md.png
+```
+
 ## API
 
 All routes are available at base URL `http://localhost:5000`
@@ -104,12 +132,60 @@ All routes are available at base URL `http://localhost:5000`
 
 ## Admin Panel
 
-Available at `/admin`. Allows managing:
+Available at `/admin`. Login with credentials from `.env`.
+
+Manages:
 - News
 - Events
 - Gallery
 - Instructors
 - Contact requests
+
+The admin panel interface is fully trilingual (RO / RU / EN) with a language switcher in the sidebar.
+
+## Multilingual System
+
+Translations live in `frontend/src/i18n/translations.js`.
+
+```js
+// In any component:
+const t = useT();
+const { lang, changeLang } = useLang();
+
+t.nav.about        // navigation
+t.home.hero.title  // page content
+t.admin.news.title // admin panel
+```
+
+Supported languages: **RO** (default) · **RU** · **EN**
+
+## Theme System
+
+The site supports dark and light themes via `ThemeContext`.
+
+```js
+const { theme, toggle } = useTheme(); // 'dark' | 'light'
+```
+
+CSS variables are defined in `src/styles/variables.css` with `[data-theme="light"]` overrides.
+The footer always stays dark in both themes.
+
+## Logo Component
+
+The logo is a pure SVG React component — no external image file required.
+
+```jsx
+import JKALogo from './components/Logo/JKALogo';
+
+// On dark background (white text):
+<JKALogo dark className={styles.logoImg} />
+
+// On light background (dark text):
+<JKALogo className={styles.logoImg} />
+
+// Theme-aware (Header):
+<JKALogo dark={theme === 'dark'} className={styles.logoImg} />
+```
 
 ## Database
 
