@@ -1,0 +1,275 @@
+/* ── Loading / not found ── */
+.loading,
+.notFound {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: var(--text-muted);
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.notFound a {
+  color: var(--red);
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* ── Hero ── */
+.hero {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  min-height: 500px;
+  background: #0a0a0a;
+}
+
+/* Left column */
+.heroLeft {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 52px 56px;
+  background: linear-gradient(135deg, #130808 0%, #0a0a0a 60%);
+  border-left: 1px solid rgba(192, 57, 43, 0.15);
+  overflow: hidden;
+}
+
+.heroLeft::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--red);
+}
+
+.kanjiWatermark {
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-jp);
+  font-size: 160px;
+  font-weight: 700;
+  line-height: 1.05;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  color: rgba(192, 57, 43, 0.12);
+  user-select: none;
+  pointer-events: none;
+  z-index: 0;
+  white-space: nowrap;
+}
+
+.back {
+  position: absolute;
+  top: 32px;
+  left: 56px;
+  right: auto;
+  z-index: 1;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s;
+}
+
+.back:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.heroMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+}
+
+.danBadge {
+  position: relative;
+  display: inline-block;
+  color: #D4AF37;
+  font-family: var(--font-heading);
+  font-size: 11px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 10px 24px;
+  margin-bottom: 28px;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+}
+
+/* Красные угловые акценты */
+.danBadge::before,
+.danBadge::after {
+  content: '';
+  position: absolute;
+  width: 7px;
+  height: 7px;
+}
+
+.danBadge::before {
+  top: -2px;
+  left: -2px;
+  border-top: 2px solid var(--red);
+  border-left: 2px solid var(--red);
+}
+
+.danBadge::after {
+  bottom: -2px;
+  right: -2px;
+  border-bottom: 2px solid var(--red);
+  border-right: 2px solid var(--red);
+}
+
+.name {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--white);
+  line-height: 1.05;
+  margin-bottom: 12px;
+}
+
+.role {
+  font-size: 11px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Right column — portrait */
+.heroRight {
+    margin: 24px 0 0 24px ;
+  position: relative;
+  overflow: hidden;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.heroKanji {
+  font-family: var(--font-jp);
+  font-size: 200px;
+  font-weight: 700;
+  color: rgba(192, 57, 43, 0.1);
+  user-select: none;
+  line-height: 1;
+}
+
+/* ── Body ── */
+.body {
+  background: var(--bg-surface);
+  padding: 72px 0 100px;
+}
+
+.content {
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sectionLabel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--red);
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.sectionLine {
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: var(--red);
+}
+
+.bio p {
+  color: var(--text-soft);
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 12px;
+}
+
+.bio p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Achievements ── */
+.achievements {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.achievements li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  color: var(--text-soft);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.achievementDot {
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  background: var(--red);
+  margin-top: 7px;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.empty {
+  color: var(--text-muted);
+  font-size: 14px;
+  letter-spacing: 2px;
+  padding: 48px 0;
+  font-style: italic;
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: 300px auto;
+  }
+  .heroRight { grid-row: 1; height: 300px; }
+  .heroLeft  { grid-row: 2; padding: 36px 24px 44px; border-left: none; border-top: 1px solid rgba(192,57,43,0.15); }
+  .back { top: 16px; left: 24px; }
+  .body { padding: 48px 0 72px; }
+}

@@ -1,0 +1,307 @@
+/* Admin shared table/form styles — always dark */
+
+/* ── Page header ── */
+.pageHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.pageTitle {
+  font-family: 'Cinzel', 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.pageCount {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.25);
+  margin-top: 6px;
+  text-transform: uppercase;
+}
+
+/* ── Form card ── */
+.card {
+  background: #161616;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 32px 36px;
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: #C0392B;
+}
+
+.formTitle {
+  font-family: 'Cinzel', 'Playfair Display', serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 28px;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.formFull {
+  grid-column: 1 / -1;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.label {
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s ease, background 0.3s ease;
+  resize: vertical;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: #C0392B;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.input[type="date"] {
+  color-scheme: dark;
+}
+
+.formActions {
+  display: flex;
+  gap: 12px;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.btnPrimary {
+  padding: 11px 28px;
+  background: #C0392B;
+  color: #fff;
+  border: none;
+  font-family: 'Cinzel', 'Playfair Display', serif;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  clip-path: polygon(5px 0%, 100% 0%, calc(100% - 5px) 100%, 0% 100%);
+}
+
+.btnPrimary:hover {
+  background: #922B21;
+}
+
+.btnSecondary {
+  padding: 11px 24px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-family: inherit;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btnSecondary:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ── Table ── */
+.tableWrap {
+  background: #161616;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table thead {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.table th {
+  padding: 14px 20px;
+  text-align: left;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.28);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 15px 20px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  vertical-align: middle;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.table tbody tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.cellTitle {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 280px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cellDate {
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.cellLocation {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 12px;
+}
+
+.msgCell {
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.cellActions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.btnEdit {
+  padding: 6px 14px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.btnEdit:hover {
+  border-color: #D4AF37;
+  color: #D4AF37;
+}
+
+.btnDelete {
+  padding: 6px 14px;
+  background: transparent;
+  border: 1px solid rgba(192, 57, 43, 0.2);
+  color: rgba(192, 57, 43, 0.6);
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.btnDelete:hover {
+  background: rgba(192, 57, 43, 0.1);
+  border-color: #C0392B;
+  color: #e05a47;
+}
+
+.empty {
+  text-align: center !important;
+  padding: 56px 20px !important;
+  color: rgba(255, 255, 255, 0.18) !important;
+  font-size: 12px !important;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* ── Contacts stats bar ── */
+.statsBar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin-bottom: 32px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.statItem {
+  background: #161616;
+  padding: 24px 28px;
+}
+
+.statNum {
+  font-family: 'Cinzel', 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #C0392B;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.statLabel {
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.28);
+}

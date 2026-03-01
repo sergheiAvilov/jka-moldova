@@ -1,0 +1,60 @@
+/* ── Palette ── */
+:root {
+  --red: #C0392B;
+  --dark-red: #922B21;
+  --black: #0A0A0A;
+  --dark: #111111;
+  --gray: #1a1a1a;
+  --light-gray: #f5f5f0;
+  --white: #FFFFFF;
+  --gold: #B8960C;
+  --gold-light: #D4AF37;
+
+  --font-primary: 'Inter', sans-serif;
+  --font-heading: 'Cinzel', 'Playfair Display', serif;
+  --font-jp: 'Noto Serif JP', serif;
+
+  --transition: 0.3s ease;
+  --container-max: 1400px;
+}
+
+/* ── Semantic tokens — dark theme defaults ── */
+:root {
+  --bg-base:        #0A0A0A;
+  --bg-surface:     #111111;
+  --bg-surface-alt: #1a1a1a;
+  --text-base:      #FFFFFF;
+  --text-soft:      rgba(255,255,255,0.6);
+  --text-muted:     rgba(255,255,255,0.35);
+  --border-subtle:  rgba(255,255,255,0.04);
+  --border-medium:  rgba(255,255,255,0.1);
+  --header-bg:      rgba(10,10,10,0.92);
+  --nav-text:       rgba(255,255,255,0.75);
+  --footer-bg:      #050505;
+  --footer-text:    rgba(255,255,255,0.55);
+  --footer-muted:   rgba(255,255,255,0.25);
+  --footer-heading: rgba(255,255,255,0.85);
+  --card-bg:        rgba(255,255,255,0.02);
+  --card-border:    rgba(255,255,255,0.04);
+}
+
+/* ── Semantic tokens — light theme overrides ── */
+[data-theme="light"] {
+  --bg-base:        #f5f4f0;
+  --bg-surface:     #ffffff;
+  --bg-surface-alt: #eeece6;
+  --text-base:      #111111;
+  --text-soft:      rgba(0,0,0,0.65);
+  --text-muted:     rgba(0,0,0,0.4);
+  --border-subtle:  rgba(0,0,0,0.07);
+  --border-medium:  rgba(0,0,0,0.15);
+  --header-bg:      rgba(245,244,240,0.95);
+  --nav-text:       rgba(0,0,0,0.75);
+  /* Footer intentionally stays dark in both themes */
+  --footer-bg:      #050505;
+  --footer-text:    rgba(255,255,255,0.55);
+  --footer-muted:   rgba(255,255,255,0.25);
+  --footer-heading: rgba(255,255,255,0.85);
+  --card-bg:        #ffffff;
+  --card-border:    rgba(0,0,0,0.08);
+}

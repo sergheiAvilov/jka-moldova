@@ -1,0 +1,123 @@
+.section {
+  background: var(--bg-surface);
+  padding: 100px 48px;
+}
+
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--red);
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.line {
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: var(--red);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 600;
+  letter-spacing: 3px;
+  line-height: 1.1;
+  color: var(--text-base);
+}
+
+.jp {
+  display: block;
+  font-family: var(--font-jp);
+  font-size: 0.45em;
+  color: var(--text-muted);
+  letter-spacing: 8px;
+  font-weight: 300;
+  margin-bottom: 4px;
+}
+
+.more {
+  color: var(--text-muted);
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border-medium);
+  padding-bottom: 4px;
+  transition: color var(--transition);
+  white-space: nowrap;
+}
+
+.more:hover {
+  color: var(--text-base);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  overflow: hidden;
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.card:hover {
+  border-color: rgba(192, 57, 43, 0.3);
+  transform: translateY(-4px);
+}
+
+.cardImage {
+  height: 200px;
+  background: var(--border-subtle);
+}
+
+.cardBody {
+  padding: 24px;
+}
+
+.cardDate {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.cardTitle {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin: 8px 0 12px;
+  line-height: 1.3;
+  color: var(--text-base);
+}
+
+.cardExcerpt {
+  font-size: 13px;
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+.empty {
+  color: var(--text-muted);
+}
+
+@media (max-width: 900px) {
+  .section { padding: 64px 24px; }
+  .grid { grid-template-columns: 1fr; }
+  .header { flex-direction: column; align-items: flex-start; gap: 16px; }
+}

@@ -1,0 +1,191 @@
+.section {
+  background: var(--bg-surface);
+  padding: 100px 48px;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--red);
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.line {
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: var(--red);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 600;
+  letter-spacing: 3px;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  color: var(--text-base);
+}
+
+.jp {
+  display: block;
+  font-family: var(--font-jp);
+  font-size: 0.45em;
+  color: var(--text-muted);
+  letter-spacing: 8px;
+  font-weight: 300;
+  margin-bottom: 4px;
+}
+
+.text p {
+  color: var(--text-soft);
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 16px;
+}
+
+.stats {
+  display: flex;
+  gap: 32px;
+  margin-top: 32px;
+  margin-bottom: 24px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.statNum {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--red);
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 12px;
+  background: var(--red);
+  color: var(--white);
+  padding: 14px 36px;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all var(--transition);
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+}
+
+.btn:hover {
+  background: var(--dark-red);
+  transform: translateY(-2px);
+}
+
+.visual {
+  position: relative;
+  height: 500px;
+}
+
+.card {
+  position: absolute;
+  inset: 0;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cardPhoto {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0.30) 100%
+  );
+  z-index: 1;
+}
+
+.kanjiMain {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-jp);
+  font-size: 260px;
+  font-weight: 700;
+  color: rgba(192, 57, 43, 0.22);
+  line-height: 1;
+  user-select: none;
+  text-shadow: 0 0 80px rgba(192, 57, 43, 0.3);
+}
+
+.badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  z-index: 3;
+  width: 120px;
+  height: 120px;
+  background: var(--red);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-heading);
+}
+
+.badgeKanji {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--white);
+}
+
+.badgeLabel {
+  font-size: 9px;
+  letter-spacing: 2px;
+  opacity: 0.8;
+  margin-top: 2px;
+  color: var(--white);
+}
+
+@media (max-width: 900px) {
+  .section { padding: 64px 24px; }
+  .about { grid-template-columns: 1fr; gap: 40px; }
+  .visual { height: 300px; }
+  .stats { gap: 20px; flex-wrap: wrap; }
+}

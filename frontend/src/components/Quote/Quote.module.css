@@ -1,0 +1,68 @@
+.section {
+  background: linear-gradient(135deg, #0d0d0d 0%, #141414 100%);
+  text-align: center;
+  padding: 100px 48px;
+  position: relative;
+  overflow: hidden;
+  /* Quote section intentionally stays dark in both themes */
+}
+
+.section::before {
+  content: '空手道';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-jp);
+  font-size: 280px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.015);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.blockquote {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.mark {
+  font-family: var(--font-heading);
+  font-size: 80px;
+  color: var(--red);
+  line-height: 0.5;
+  opacity: 0.4;
+  display: block;
+  margin-bottom: 24px;
+}
+
+.text {
+  font-family: var(--font-heading);
+  font-size: clamp(20px, 3vw, 32px);
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 28px;
+}
+
+.author {
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+.role {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.35);
+  margin-top: 6px;
+}
+
+@media (max-width: 900px) {
+  .section { padding: 64px 24px; }
+  .section::before { font-size: 120px; }
+}

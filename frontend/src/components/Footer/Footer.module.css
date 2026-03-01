@@ -1,0 +1,209 @@
+.footer {
+  background: var(--footer-bg);
+  color: var(--white);
+  border-top: 4px solid var(--red);
+  padding-top: 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Kanji watermark */
+.kanji {
+  position: absolute;
+  right: -40px;
+  bottom: -60px;
+  font-family: var(--font-jp);
+  font-size: 320px;
+  color: rgba(255, 255, 255, 0.025);
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+  z-index: 0;
+}
+
+/* Inner grid (columns) */
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 72px;
+  padding-bottom: 64px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Brand */
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logoEmblem {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+
+.emblemSvg {
+  width: 100%;
+  height: 100%;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+}
+
+.jka {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 6px;
+  color: var(--white);
+  line-height: 1;
+}
+
+.moldova {
+  font-size: 9px;
+  letter-spacing: 4px;
+  color: var(--gold-light);
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.brandDesc {
+  font-size: 13px;
+  color: var(--footer-text);
+  line-height: 1.9;
+  max-width: 280px;
+}
+
+.brandTagline {
+  font-family: var(--font-heading);
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-top: 4px;
+}
+
+/* Columns */
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.col h4 {
+  font-family: var(--font-heading);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--footer-heading);
+  margin-bottom: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.col a {
+  color: var(--footer-text);
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  transition: color var(--transition);
+  line-height: 1.5;
+}
+
+.col a:hover {
+  color: var(--white);
+}
+
+.contactItem {
+  color: var(--footer-text);
+  font-size: 13px;
+  letter-spacing: 0.3px;
+  line-height: 1.6;
+}
+
+/* Bottom bar */
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 32px;
+  padding-bottom: 64px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+  z-index: 1;
+}
+
+.bottom p {
+  font-size: 12px;
+  color: var(--footer-muted);
+  letter-spacing: 1px;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--footer-muted);
+}
+
+.badgeJka {
+  color: var(--red);
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+@media (max-width: 1100px) {
+  .grid {
+    gap: 48px;
+  }
+}
+
+@media (max-width: 900px) {
+  .footer {
+    padding-top: 72px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 48px;
+  }
+
+  .brand {
+    grid-column: span 2;
+  }
+
+  .kanji {
+    font-size: 200px;
+    right: -20px;
+    bottom: -40px;
+  }
+
+  .bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+    padding-bottom: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .brand {
+    grid-column: span 1;
+  }
+}

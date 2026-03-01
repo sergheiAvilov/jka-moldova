@@ -1,0 +1,167 @@
+/* Admin Layout — always dark */
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background: #0d0d0d;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  width: 260px;
+  background: #111111;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
+.brand {
+  padding: 32px 28px 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.brandKanji {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 30px;
+  color: #C0392B;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.brandTitle {
+  font-family: 'Cinzel', 'Playfair Display', serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.85);
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+.brandSub {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.25);
+  margin-top: 4px;
+  display: block;
+}
+
+/* ── Nav ── */
+.nav {
+  flex: 1;
+  padding: 28px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.navLabel {
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.18);
+  padding: 0 12px;
+  margin-top: 16px;
+  margin-bottom: 6px;
+}
+
+.navLabel:first-child {
+  margin-top: 0;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.45);
+  border-radius: 2px;
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  text-decoration: none;
+  border-left: 2px solid transparent;
+}
+
+.navLink:hover {
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.04);
+  border-left-color: rgba(255, 255, 255, 0.15);
+}
+
+.navLink.active {
+  color: #fff;
+  background: rgba(192, 57, 43, 0.12);
+  border-left-color: #C0392B;
+}
+
+.navIcon {
+  font-size: 15px;
+  width: 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* ── Footer ── */
+.sidebarFooter {
+  padding: 20px 16px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.backLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.28);
+  text-decoration: none;
+  border-radius: 2px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.backLink:hover {
+  color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.logout {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  text-align: left;
+  padding: 9px 12px;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.28);
+  border-radius: 2px;
+  transition: color 0.2s ease, background 0.2s ease;
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+.logout:hover {
+  color: #e05a47;
+  background: rgba(192, 57, 43, 0.08);
+}
+
+/* ── Main content ── */
+.content {
+  flex: 1;
+  margin-left: 260px;
+  padding: 44px 52px;
+  min-height: 100vh;
+  overflow-y: auto;
+}

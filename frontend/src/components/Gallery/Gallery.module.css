@@ -1,0 +1,162 @@
+.section {
+  background: var(--bg-surface);
+  padding: 100px 48px;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--red);
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.line {
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: var(--red);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 600;
+  letter-spacing: 3px;
+  line-height: 1.1;
+  color: var(--text-base);
+  margin-bottom: 60px;
+}
+
+.jp {
+  display: block;
+  font-family: var(--font-jp);
+  font-size: 0.45em;
+  color: var(--text-muted);
+  letter-spacing: 8px;
+  font-weight: 300;
+  margin-bottom: 4px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 280px 280px;
+  gap: 4px;
+}
+
+.item {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.span {
+  grid-row: span 2;
+}
+
+.kanji {
+  font-family: var(--font-jp);
+  font-size: 100px;
+  color: var(--border-subtle);
+  transition: transform 0.4s;
+  user-select: none;
+}
+
+.item:hover .kanji {
+  transform: scale(1.1);
+}
+
+.item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(192, 57, 43, 0.08);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.item:hover::after {
+  opacity: 1;
+}
+
+.itemLabel {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  z-index: 1;
+}
+
+/* ── Lightbox ── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  cursor: pointer;
+}
+
+.lightboxClose {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  background: none;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.7);
+  font-size: 18px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.lightboxClose:hover {
+  border-color: var(--red);
+  color: #fff;
+}
+
+.lightboxImg {
+  max-width: 90vw;
+  max-height: 80vh;
+  object-fit: contain;
+  cursor: default;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.6);
+}
+
+.lightboxCaption {
+  margin-top: 16px;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .section { padding: 64px 24px; }
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  .span { grid-row: auto; }
+}
