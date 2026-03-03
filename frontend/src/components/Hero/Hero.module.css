@@ -63,19 +63,22 @@
 }
 
 .eyebrow {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   margin-bottom: 28px;
   color: var(--gold-light);
-  font-size: 11px;
-  letter-spacing: 5px;
+  font-size: 10px;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .line {
   display: inline-block;
-  width: 40px;
+  width: 32px;
+  flex-shrink: 0;
   height: 1px;
   background: var(--gold-light);
   opacity: 0.6;

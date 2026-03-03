@@ -46,7 +46,7 @@ export default function Header() {
       >
         <a href="/#about" onClick={() => setMenuOpen(false)}>{t.nav.about}</a>
         <a href="/#disciplines" onClick={() => setMenuOpen(false)}>{t.nav.disciplines}</a>
-        <a href="/#instructors" onClick={() => setMenuOpen(false)}>{t.nav.instructors}</a>
+        <NavLink to="/club-membership" onClick={() => setMenuOpen(false)}>{t.nav.membership}</NavLink>
         <NavLink to="/events" onClick={() => setMenuOpen(false)}>{t.nav.events}</NavLink>
         <NavLink to="/news" onClick={() => setMenuOpen(false)}>{t.nav.news}</NavLink>
         <a href="/#cta" className={styles.navBtn} onClick={() => setMenuOpen(false)}>{t.nav.join}</a>

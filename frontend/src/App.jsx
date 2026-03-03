@@ -18,6 +18,7 @@ import AdminContacts from './pages/admin/AdminContacts.jsx';
 import AdminGallery from './pages/admin/AdminGallery.jsx';
 import AdminInstructors from './pages/admin/AdminInstructors.jsx';
 import InstructorPage from './pages/InstructorPage.jsx';
+import ClubMembershipPage from './pages/ClubMembershipPage.jsx';
 
 export default function App() {
   return (
@@ -33,6 +34,7 @@ export default function App() {
             <Route path="/schedule" element={<SchedulePage />} />
             <Route path="/clubs" element={<ClubsPage />} />
             <Route path="/camps" element={<CampsPage />} />
+            <Route path="/club-membership" element={<ClubMembershipPage />} />
             <Route path="/instructors/:id" element={<InstructorPage />} />
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin" element={<AdminLayout />}>

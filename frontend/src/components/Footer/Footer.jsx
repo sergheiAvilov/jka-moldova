@@ -19,9 +19,7 @@ export default function Footer() {
             <Link to="/" className={styles.logo} aria-label="JKA Moldova">
               <JKALogo dark className={styles.logoImg} />
             </Link>
-            <p className={styles.brandDesc}>
-              Japan Karate Association — Moldova.
-            </p>
+            <p className={styles.brandDesc}>{f.brandDesc}</p>
             <span className={styles.brandTagline}>{f.tagline}</span>
           </div>
 

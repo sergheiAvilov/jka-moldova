@@ -12,7 +12,7 @@ const STRUCTURE = [
 ];
 
 const DOCUMENTS = [
-  { name: { ro: 'Statutul Federației JKA Moldova', ru: 'Устав Федерации JKA Moldova', en: 'JKA Moldova Federation Charter' }, year: '2015' },
+  { name: { ro: 'Statutul Federației Naționale de Karate-Do Tradițional din Republica Moldova', ru: 'Устав Национальной федерации традиционного каратэ-до Республики Молдова', en: 'Charter of the National Traditional Karate-do Federation of the Republic of Moldova' }, year: '2015' },
   { name: { ro: 'Regulamentul competițiilor', ru: 'Положение о соревнованиях', en: 'Competition Regulations' }, year: '2023' },
   { name: { ro: 'Regulamentul de examinare', ru: 'Положение об аттестации', en: 'Examination Regulations' }, year: '2022' },
   { name: { ro: 'Codul de etică', ru: 'Кодекс этики', en: 'Code of Ethics' }, year: '2020' },

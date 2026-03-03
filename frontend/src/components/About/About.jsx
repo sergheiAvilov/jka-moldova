@@ -30,7 +30,7 @@ export default function About() {
               <span className={styles.statLabel}>{a.stat2}</span>
             </div>
             <div className={styles.stat}>
-              <span className={styles.statNum}>12</span>
+              <span className={styles.statNum}>10</span>
               <span className={styles.statLabel}>{a.stat3}</span>
             </div>
           </div>
