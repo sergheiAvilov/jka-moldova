@@ -19,9 +19,9 @@ export default function Home() {
         <Hero />
         <RedStripe />
         <About />
+        <Instructors />
         <Disciplines />
         <Quote />
-        <Instructors />
         <Events />
         <News />
         <Gallery />

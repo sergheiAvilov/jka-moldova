@@ -120,6 +120,41 @@
   text-underline-offset: 3px;
 }
 
+.eventLink {
+  font-size: 12px !important;
+  line-height: 1.4 !important;
+  opacity: 0.8;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 180px;
+}
+
+.socialRow {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  color: var(--footer-text);
+  text-decoration: none !important;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.socialLink:hover {
+  color: var(--white) !important;
+  border-color: var(--white);
+  text-decoration: none !important;
+}
+
 /* Bottom bar */
 .bottom {
   display: flex;

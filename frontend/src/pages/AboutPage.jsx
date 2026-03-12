@@ -16,6 +16,7 @@ const DOCUMENTS = [
   { name: { ro: 'Regulamentul competițiilor', ru: 'Положение о соревнованиях', en: 'Competition Regulations' }, year: '2023' },
   { name: { ro: 'Regulamentul de examinare', ru: 'Положение об аттестации', en: 'Examination Regulations' }, year: '2022' },
   { name: { ro: 'Codul de etică', ru: 'Кодекс этики', en: 'Code of Ethics' }, year: '2020' },
+  { name: { ro: 'Programul și Regulamentul de Examinare JKA', ru: 'Программа и положение об экзаменах JKA', en: 'JKA Examination Program & Regulations' }, year: '2023' },
 ];
 
 const PARTNERS = [
