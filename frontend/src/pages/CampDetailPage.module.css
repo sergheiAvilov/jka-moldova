@@ -1,6 +1,7 @@
 .main {
   min-height: 100vh;
   padding: 6rem 0 5rem;
+  background: var(--bg-base);
 }
 
 /* ── Back link ─────────────────────────────────────────── */
@@ -24,7 +25,7 @@
   align-items: flex-start;
   padding-bottom: 2.5rem;
   margin-bottom: 2.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .kanji {
@@ -58,6 +59,7 @@
   letter-spacing: 0.04em;
   line-height: 1.1;
   margin-bottom: 1rem;
+  color: var(--text-base);
 }
 
 /* ── Meta ──────────────────────────────────────────────── */
@@ -73,6 +75,7 @@
   align-items: center;
   gap: 0.4rem;
   font-size: 0.9rem;
+  color: var(--text-base);
 }
 
 .metaLabel {
@@ -84,7 +87,7 @@
 }
 
 .metaSep {
-  color: rgba(255, 255, 255, 0.2);
+  color: var(--text-muted);
   font-size: 1.2rem;
   line-height: 1;
 }
@@ -98,14 +101,14 @@
 .desc {
   font-size: 1.05rem;
   line-height: 1.85;
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--text-soft);
 }
 
 /* ── Registration block ────────────────────────────────── */
 .register {
   max-width: 580px;
-  background: rgba(255, 255, 255, 0.025);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   border-left: 3px solid var(--red);
   padding: 2rem 2.5rem;
 }
@@ -116,12 +119,12 @@
   letter-spacing: 0.22em;
   text-transform: uppercase;
   margin-bottom: 0.6rem;
-  color: #fff;
+  color: var(--text-base);
 }
 
 .registerNote {
   font-size: 0.88rem;
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--text-soft);
   line-height: 1.65;
   margin-bottom: 1.5rem;
 }
@@ -144,7 +147,7 @@
 
 /* ── Not found ─────────────────────────────────────────── */
 .notFound {
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--text-muted);
   margin-bottom: 1.5rem;
   font-size: 1rem;
 }
