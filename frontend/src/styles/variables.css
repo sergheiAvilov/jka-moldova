@@ -9,6 +9,8 @@
   --white: #FFFFFF;
   --gold: #B8960C;
   --gold-light: #D4AF37;
+  --orange:      #E8761A;   /* admin secondary – vibrant, dark-theme  */
+  --orange-dark: #C4510C;   /* admin secondary – deeper, light-theme  */
 
   --font-primary: 'Inter', sans-serif;
   --font-heading: 'Cinzel', 'Playfair Display', serif;
@@ -36,6 +38,19 @@
   --footer-heading: rgba(255,255,255,0.85);
   --card-bg:        rgba(255,255,255,0.02);
   --card-border:    rgba(255,255,255,0.04);
+
+  /* ── Admin panel tokens — dark defaults ── */
+  --admin-bg:           #0d0d0d;
+  --admin-sidebar:      #111111;
+  --admin-card:         #161616;
+  --admin-border:       rgba(255,255,255,0.06);
+  --admin-text:         rgba(255,255,255,0.85);
+  --admin-text-soft:    rgba(255,255,255,0.45);
+  --admin-text-muted:   rgba(255,255,255,0.22);
+  --admin-input-bg:     rgba(255,255,255,0.04);
+  --admin-input-border: rgba(255,255,255,0.08);
+  --admin-hover-bg:     rgba(255,255,255,0.04);
+  --admin-accent:       var(--orange);
 }
 
 /* ── Semantic tokens — light theme overrides ── */
@@ -57,4 +72,17 @@
   --footer-heading: rgba(255,255,255,0.85);
   --card-bg:        #ffffff;
   --card-border:    rgba(0,0,0,0.08);
+
+  /* ── Admin panel tokens — light overrides ── */
+  --admin-bg:           #edeae4;
+  --admin-sidebar:      #f8f7f3;
+  --admin-card:         #ffffff;
+  --admin-border:       rgba(0,0,0,0.08);
+  --admin-text:         #1a1a1a;
+  --admin-text-soft:    rgba(0,0,0,0.60);
+  --admin-text-muted:   rgba(0,0,0,0.35);
+  --admin-input-bg:     rgba(0,0,0,0.03);
+  --admin-input-border: rgba(0,0,0,0.12);
+  --admin-hover-bg:     rgba(0,0,0,0.04);
+  --admin-accent:       var(--orange-dark);
 }

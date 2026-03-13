@@ -1,16 +1,16 @@
-/* Admin Layout — always dark */
+/* Admin Layout — theme-aware via CSS variables */
 
 .layout {
   display: flex;
   min-height: 100vh;
-  background: #0d0d0d;
+  background: var(--admin-bg);
 }
 
 /* ── Sidebar ── */
 .sidebar {
   width: 260px;
-  background: #111111;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--admin-sidebar);
+  border-right: 1px solid var(--admin-border);
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
@@ -23,7 +23,7 @@
 
 .brand {
   padding: 28px 28px 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--admin-border);
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -39,7 +39,7 @@
 .brandSub {
   font-size: 10px;
   letter-spacing: 1.5px;
-  color: rgba(255, 255, 255, 0.25);
+  color: var(--admin-text-muted);
   display: block;
 }
 
@@ -56,7 +56,7 @@
   font-size: 9px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.18);
+  color: var(--admin-text-muted);
   padding: 0 12px;
   margin-top: 16px;
   margin-bottom: 6px;
@@ -73,7 +73,7 @@
   padding: 10px 12px;
   font-size: 13px;
   letter-spacing: 0.5px;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--admin-text-soft);
   border-radius: 2px;
   transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
   text-decoration: none;
@@ -81,15 +81,21 @@
 }
 
 .navLink:hover {
-  color: rgba(255, 255, 255, 0.85);
-  background: rgba(255, 255, 255, 0.04);
-  border-left-color: rgba(255, 255, 255, 0.15);
+  color: var(--admin-text);
+  background: var(--admin-hover-bg);
+  border-left-color: var(--admin-border);
 }
 
 .navLink.active {
   color: #fff;
   background: rgba(192, 57, 43, 0.12);
   border-left-color: #C0392B;
+}
+
+/* override text color for active so it's always white on red bg */
+[data-theme="light"] .navLink.active {
+  color: #C0392B;
+  background: rgba(192, 57, 43, 0.08);
 }
 
 .navIcon {
@@ -99,13 +105,38 @@
   flex-shrink: 0;
 }
 
-/* ── Footer ── */
+/* ── Sidebar Footer ── */
 .sidebarFooter {
   padding: 20px 16px 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--admin-border);
   display: flex;
   flex-direction: column;
   gap: 4px;
+}
+
+/* ── Theme Toggle ── */
+.themeBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  text-align: left;
+  padding: 9px 12px;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: var(--admin-text-soft);
+  border-radius: 2px;
+  transition: color 0.2s ease, background 0.2s ease;
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  margin-bottom: 6px;
+}
+
+.themeBtn:hover {
+  color: var(--admin-text);
+  background: var(--admin-hover-bg);
 }
 
 /* ── Language Switcher ── */
@@ -119,8 +150,8 @@
 .langBtn {
   flex: 1;
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: rgba(255, 255, 255, 0.25);
+  border: 1px solid var(--admin-border);
+  color: var(--admin-text-muted);
   font-size: 9px;
   letter-spacing: 2px;
   padding: 5px 0;
@@ -131,7 +162,7 @@
 
 .langBtn:hover {
   border-color: rgba(192, 57, 43, 0.4);
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--admin-text-soft);
 }
 
 .langActive {
@@ -146,15 +177,15 @@
   padding: 9px 12px;
   font-size: 12px;
   letter-spacing: 0.5px;
-  color: rgba(255, 255, 255, 0.28);
+  color: var(--admin-text-muted);
   text-decoration: none;
   border-radius: 2px;
   transition: color 0.2s ease, background 0.2s ease;
 }
 
 .backLink:hover {
-  color: rgba(255, 255, 255, 0.6);
-  background: rgba(255, 255, 255, 0.04);
+  color: var(--admin-text-soft);
+  background: var(--admin-hover-bg);
 }
 
 .logout {
@@ -166,7 +197,7 @@
   padding: 9px 12px;
   font-size: 12px;
   letter-spacing: 0.5px;
-  color: rgba(255, 255, 255, 0.28);
+  color: var(--admin-text-muted);
   border-radius: 2px;
   transition: color 0.2s ease, background 0.2s ease;
   cursor: pointer;
@@ -176,7 +207,7 @@
 }
 
 .logout:hover {
-  color: #e05a47;
+  color: var(--admin-accent);
   background: rgba(192, 57, 43, 0.08);
 }
 

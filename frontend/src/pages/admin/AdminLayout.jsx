@@ -2,6 +2,7 @@ import { Navigate, Outlet, NavLink, Link } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth.js';
 import { useT } from '../../hooks/useT.js';
 import { useLang } from '../../context/LangContext.jsx';
+import { useTheme } from '../../context/ThemeContext.jsx';
 import JKALogo from '../../components/Logo/JKALogo.jsx';
 import styles from './AdminLayout.module.css';
 
@@ -19,6 +20,7 @@ export default function AdminLayout() {
   const { isAuthenticated, logout } = useAuth();
   const t = useT();
   const { lang, changeLang } = useLang();
+  const { theme, toggle } = useTheme();
   const a = t.admin.layout;
 
   if (!isAuthenticated) {
@@ -30,7 +32,7 @@ export default function AdminLayout() {
       <aside className={styles.sidebar}>
         {/* Brand */}
         <div className={styles.brand}>
-          <JKALogo dark className={styles.logoImg} />
+          <JKALogo dark={theme === 'dark'} className={styles.logoImg} />
           <span className={styles.brandSub}>{a.panelTitle}</span>
         </div>
 
@@ -53,6 +55,16 @@ export default function AdminLayout() {
 
         {/* Footer */}
         <div className={styles.sidebarFooter}>
+          {/* Theme toggle */}
+          <button
+            className={styles.themeBtn}
+            onClick={toggle}
+            aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
+          >
+            <span>{theme === 'dark' ? '☀' : '☽'}</span>
+            {theme === 'dark' ? 'Light mode' : 'Dark mode'}
+          </button>
+
           <div className={styles.langRow}>
             {LANGS.map((l) => (
               <button
