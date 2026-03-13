@@ -107,7 +107,6 @@ export const translations = {
       },
       training: {
         title: 'Antrenamente',
-        schedule: 'Orarul',
         clubs: 'Cluburile noastre',
         camps: 'Stagii de pregătire',
         exams: 'Examene de grad',
@@ -141,12 +140,6 @@ export const translations = {
       title1: 'CLUBURI', title2: 'MEMBRE',
       subtitle: 'Organizații membre ale Federației Naționale de Karate-Do Tradițional din Republica Moldova.',
     },
-    schedulePage: {
-      title1: 'ORARUL', title2: 'ANTRENAMENTELOR',
-      group: 'Grupă', days: 'Zile', time: 'Ora', location: 'Locație',
-      note: 'Prima lecție este gratuită. Vino în echipament sport sau contactează-ne în avans.',
-      ctaLabel: 'Înregistrează-te',
-    },
     clubsPage: {
       title1: 'CLUBURILE', title2: 'NOASTRE',
       coachLabel: 'Antrenor', addressLabel: 'Adresă', phoneLabel: 'Telefon',
@@ -154,6 +147,14 @@ export const translations = {
     campsPage: {
       title1: 'STAGII DE', title2: 'PREGĂTIRE',
       dateLabel: 'Dată', locationLabel: 'Loc', register: 'Înregistrare',
+    },
+    campDetailPage: {
+      back: '← Înapoi la stagii',
+      dateLabel: 'Dată', locationLabel: 'Loc',
+      registerTitle: 'ÎNREGISTRARE',
+      registerNote: 'Completați formularul online sau contactați-ne direct pentru detalii și confirmare.',
+      registerBtn: 'Înregistrare online',
+      notFound: 'Stagiul nu a fost găsit.',
     },
     // noinspection NonAsciiCharacters – keys are role names from the backend and cannot be changed
     roleMap: {
@@ -293,7 +294,6 @@ export const translations = {
       },
       training: {
         title: 'Тренировки',
-        schedule: 'Расписание',
         clubs: 'Наши клубы',
         camps: 'Учебные сборы',
         exams: 'Экзамены по поясам',
@@ -327,12 +327,6 @@ export const translations = {
       title1: 'КЛУБЫ', title2: 'ЧЛЕНЫ',
       subtitle: 'Организации — члены Национальной федерации традиционного каратэ-до Республики Молдова.',
     },
-    schedulePage: {
-      title1: 'РАСПИСАНИЕ', title2: 'ТРЕНИРОВОК',
-      group: 'Группа', days: 'Дни', time: 'Время', location: 'Место',
-      note: 'Первое занятие — бесплатно. Приходите в спортивной форме или свяжитесь с нами заранее.',
-      ctaLabel: 'Записаться',
-    },
     clubsPage: {
       title1: 'НАШИ', title2: 'КЛУБЫ',
       coachLabel: 'Тренер', addressLabel: 'Адрес', phoneLabel: 'Телефон',
@@ -340,6 +334,14 @@ export const translations = {
     campsPage: {
       title1: 'УЧЕБНЫЕ', title2: 'СБОРЫ',
       dateLabel: 'Дата', locationLabel: 'Место', register: 'Записаться',
+    },
+    campDetailPage: {
+      back: '← Назад к сборам',
+      dateLabel: 'Дата', locationLabel: 'Место',
+      registerTitle: 'РЕГИСТРАЦИЯ',
+      registerNote: 'Заполните онлайн-форму или свяжитесь с нами напрямую для получения деталей и подтверждения.',
+      registerBtn: 'Зарегистрироваться онлайн',
+      notFound: 'Сбор не найден.',
     },
     // noinspection NonAsciiCharacters – keys are role names from the backend and cannot be changed
     roleMap: {
@@ -479,7 +481,6 @@ export const translations = {
       },
       training: {
         title: 'Training',
-        schedule: 'Schedule',
         clubs: 'Our clubs',
         camps: 'Training camps',
         exams: 'Belt exams',
@@ -513,12 +514,6 @@ export const translations = {
       title1: 'MEMBER', title2: 'CLUBS',
       subtitle: 'Member organizations of the National Traditional Karate-do Federation of the Republic of Moldova.',
     },
-    schedulePage: {
-      title1: 'TRAINING', title2: 'SCHEDULE',
-      group: 'Group', days: 'Days', time: 'Time', location: 'Location',
-      note: 'First session is free. Come in sportswear or contact us in advance.',
-      ctaLabel: 'Register',
-    },
     clubsPage: {
       title1: 'OUR', title2: 'CLUBS',
       coachLabel: 'Coach', addressLabel: 'Address', phoneLabel: 'Phone',
@@ -526,6 +521,14 @@ export const translations = {
     campsPage: {
       title1: 'TRAINING', title2: 'CAMPS',
       dateLabel: 'Date', locationLabel: 'Location', register: 'Register',
+    },
+    campDetailPage: {
+      back: '← Back to camps',
+      dateLabel: 'Date', locationLabel: 'Location',
+      registerTitle: 'REGISTRATION',
+      registerNote: 'Fill out the online form or contact us directly for details and confirmation.',
+      registerBtn: 'Register online',
+      notFound: 'Camp not found.',
     },
     // noinspection NonAsciiCharacters – keys are role names from the backend and cannot be changed
     roleMap: {

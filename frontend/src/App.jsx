@@ -7,7 +7,6 @@ import Home from './pages/Home.jsx';
 import NewsPage from './pages/NewsPage.jsx';
 import EventsPage from './pages/EventsPage.jsx';
 import AboutPage from './pages/AboutPage.jsx';
-import SchedulePage from './pages/SchedulePage.jsx';
 import ClubsPage from './pages/ClubsPage.jsx';
 import CampsPage from './pages/CampsPage.jsx';
 import AdminLogin from './pages/admin/AdminLogin.jsx';
@@ -19,6 +18,7 @@ import AdminGallery from './pages/admin/AdminGallery.jsx';
 import AdminInstructors from './pages/admin/AdminInstructors.jsx';
 import InstructorPage from './pages/InstructorPage.jsx';
 import ClubMembershipPage from './pages/ClubMembershipPage.jsx';
+import CampDetailPage from './pages/CampDetailPage.jsx';
 
 export default function App() {
   return (
@@ -31,9 +31,9 @@ export default function App() {
             <Route path="/news" element={<NewsPage />} />
             <Route path="/events" element={<EventsPage />} />
             <Route path="/about" element={<AboutPage />} />
-            <Route path="/schedule" element={<SchedulePage />} />
             <Route path="/clubs" element={<ClubsPage />} />
             <Route path="/camps" element={<CampsPage />} />
+            <Route path="/camps/:id" element={<CampDetailPage />} />
             <Route path="/club-membership" element={<ClubMembershipPage />} />
             <Route path="/instructors/:id" element={<InstructorPage />} />
             <Route path="/admin/login" element={<AdminLogin />} />

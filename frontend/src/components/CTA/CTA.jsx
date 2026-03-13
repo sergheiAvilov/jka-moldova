@@ -30,7 +30,6 @@ export default function CTA() {
           <span className={styles.line} aria-hidden="true" />{t.nav.join}
         </div>
         <h2 className={styles.title}>{c.title}</h2>
-        <p className={styles.subtitle}>{c.subtitle}</p>
         <p className={styles.desc}>{c.desc}</p>
         <button className={styles.btn} onClick={() => setOpen(true)}>
           {c.button}

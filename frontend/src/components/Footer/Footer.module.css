@@ -107,17 +107,32 @@
 }
 
 .contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
   color: var(--footer-text);
   font-size: 13px;
   letter-spacing: 0.3px;
   line-height: 1.6;
   cursor: pointer;
+  text-decoration: none;
+}
+
+.contactItem svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  opacity: 0.55;
+  color: var(--red);
 }
 
 .contactItem:hover {
   color: var(--white);
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+.contactItem:hover svg {
+  opacity: 1;
 }
 
 .eventLink {

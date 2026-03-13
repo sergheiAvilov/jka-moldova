@@ -12,6 +12,32 @@ function FacebookIcon() {
   );
 }
 
+function MapPinIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="14" height="14" aria-hidden="true">
+      <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/>
+      <circle cx="12" cy="10" r="3"/>
+    </svg>
+  );
+}
+
+function MailIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="14" height="14" aria-hidden="true">
+      <rect x="2" y="4" width="20" height="16" rx="2"/>
+      <polyline points="2,4 12,13 22,4"/>
+    </svg>
+  );
+}
+
+function PhoneIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="14" height="14" aria-hidden="true">
+      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.06 2.18 2 2 0 012.03 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+    </svg>
+  );
+}
+
 function InstagramIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true">
@@ -81,16 +107,16 @@ export default function Footer() {
               className={styles.contactItem}
               aria-label={`${f.contacts.address} — ${newTab}`}
             >
-              {f.contacts.address}
+              <MapPinIcon />{f.contacts.address}
             </a>
-            <a href={`mailto:${f.contacts.email}`}>
-              {f.contacts.email}
+            <a href={`mailto:${f.contacts.email}`} className={styles.contactItem}>
+              <MailIcon />{f.contacts.email}
             </a>
-            <a href={`tel:${f.contacts.phone.replace(/\s/g, '')}`}>
-              {f.contacts.phone}
+            <a href={`tel:${f.contacts.phone.replace(/\s/g, '')}`} className={styles.contactItem}>
+              <PhoneIcon />{f.contacts.phone}
             </a>
-            <a href={`tel:${f.contacts.phone2.replace(/\s/g, '')}`}>
-              {f.contacts.phone2}
+            <a href={`tel:${f.contacts.phone2.replace(/\s/g, '')}`} className={styles.contactItem}>
+              <PhoneIcon />{f.contacts.phone2}
             </a>
             <div className={styles.socialRow}>
               <a
